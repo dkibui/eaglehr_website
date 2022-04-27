@@ -41,9 +41,15 @@ ul {
   margin: auto;
 }
 
-.width {
+.wide-width {
   width: 90%;
   max-width: 1600px;
+  margin: auto;
+}
+
+.width {
+  width: 90%;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -102,6 +108,8 @@ ul {
 }
 
 .links .links-inner {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -294,7 +302,7 @@ ul {
   background: #f2f2f2;
   color: #616161;
   font-size: 12px;
-  padding-bottom: 28px;
+  padding-bottom: 3.25rem;
 }
 
 .footer-inner i {
@@ -368,6 +376,11 @@ ul {
   .main-nav li {
     padding: 0;
     padding-left: 24px;
+    flex-shrink: 0;
+  }
+
+  .main-nav li:first-child {
+    padding-left: 0;
   }
 
   .main-nav ul {
