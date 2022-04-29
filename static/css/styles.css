@@ -15,7 +15,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: #fff;
+  background: rgb(248, 250, 252);
   color: #000;
   font-size: 15px;
   line-height: 1.5;
@@ -193,7 +193,6 @@ ul {
   text-align: center;
   padding-bottom: 50px;
   margin-bottom: 20px;
-  /* margin-top: 2px; */
 }
 
 .header p {
@@ -456,7 +455,7 @@ ul {
   }
 
   .header {
-    margin-top: 4px;
+    /* margin-top: 4px; */
   }
 
   .home-cards,
