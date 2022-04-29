@@ -115,6 +115,7 @@ ul {
 
 .carbon .content {
   width: 85%;
+  color: var(--white);
 }
 
 .links .links-inner {
@@ -270,12 +271,11 @@ ul {
   margin-bottom: 5px;
 }
 
-.home-cards a {
+.home-cards a,
+.event a {
   display: inline-block;
   padding-top: 10px;
   color: var(--secondary);
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 .home-cards a:hover i {
