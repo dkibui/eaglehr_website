@@ -220,8 +220,11 @@ ul {
 }
 
 .news-events h2 {
+  text-transform: uppercase;
+  text-align: center;
   color: var(--primary);
-  margin-bottom: 14px;
+  margin-top: 2.75rem;
+  margin-bottom: 22px;
 }
 
 .home-cards,
@@ -464,5 +467,10 @@ ul {
 
   .event {
     border-top: none;
+  }
+
+  .news-events h2 {
+    margin-top: 5.725rem;
+    margin-bottom: 32px;
   }
 }
