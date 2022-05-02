@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 from pathlib import Path
 import os
 import environ
@@ -26,6 +27,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', env('ALLOWED_HOST')]
 # Application definition
 
 INSTALLED_APPS = [
+    'User.apps.UserConfig',
     'webapp.apps.WebappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +46,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# MESSAGE_TAGS
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+
+# AUTH_USER_MODEL = 'User.User'
 
 ROOT_URLCONF = 'CORE.urls'
 

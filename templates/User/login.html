@@ -1,0 +1,29 @@
+{% extends "sitewide/base.html" %}
+
+{% block content %}
+<div class="login-form">
+  <form class="width" action="" method="post" autocomplete="off">
+      {% csrf_token %}
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="username">Username <span class="text-danger">*</span></label>
+          <div><input type="text" name="username" class="form-control" placeholder="Username" id="username" maxlength="75" autofocus="" required=""></div>          
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="password1">Password <span class="text-danger">*</span></label>
+          <div><input type="password" name="password1" class="form-control" placeholder="Password" id="password1" maxlength="75" required=""></div>
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <input class="button" type="submit" value="Login">
+        </div>
+      </div>
+  </form>
+</div>
+{% endblock content %}

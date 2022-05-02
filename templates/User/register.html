@@ -1,0 +1,77 @@
+{% extends "sitewide/base.html" %}
+
+{% block content %}
+<div class="login-form">
+  <form class="width" action="" method="post" autocomplete="off">
+      {% csrf_token %}
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="username">Username <span class="text-danger">*</span></label>
+          <div>{{ form.username }}</div>
+          {% if form.username.errors %} {% for error in form.username.errors %}
+          <div class=".alert alert-danger">{{ error|escape }}</div>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="first_name">First name <span class="text-danger">*</span></label>
+          <div>{{ form.first_name }}</div>
+          {% if form.first_name.errors %} {% for error in form.first_name.errors %}
+          <div class=".alert alert-danger">{{ error|escape }}</div>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="last_name">Last name <span class="text-danger">*</span></label>
+          <div>{{ form.last_name }}</div>
+          {% if form.last_name.errors %} {% for error in form.last_name.errors %}
+          <div class=".alert alert-danger">{{ error|escape }}</div>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="email">Email <span class="text-danger">*</span></label>
+          <div>{{ form.email }}</div>
+          {% if form.email.errors %} {% for error in form.email.errors %}
+          <div class=".alert alert-danger">{{ error|escape }}</div>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="password1">Password <span class="text-danger">*</span></label>
+          <div>{{ form.password1 }}</div>
+          {% if form.password1.errors %} {% for error in form.password1.errors %}
+          <div class=".alert alert-danger">{{ error|escape }}</div>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <label for="password2"
+            >Confirm password <span class="text-danger">*</span></label
+          >
+          <div>{{ form.password2 }}</div>
+          {% if form.password2.errors %} {% for error in form.password2.errors %}
+          <div class=".alert alert-danger">{{ error|escape }}</div>
+          {% endfor %} {% endif %}
+        </div>
+      </div>
+
+      <div class="input-label-wrapper">
+        <div class="form-group">
+          <input class="button" type="submit" value="Register">
+        </div>
+      </div>
+  </form>
+</div>
+{% endblock content %}

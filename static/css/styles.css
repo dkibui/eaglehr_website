@@ -1,6 +1,7 @@
 :root {
   --primary: #003d4a;
-  --secondary: #c03030;
+  --muted-primary: hsla(191, 100%, 15%, 0.048);
+  --danger: #c03030;
   --secondary: #db8c00;
   --white: #fff;
   --links: #262626;
@@ -319,6 +320,17 @@ ul {
   padding: 50px 30px;
 }
 
+.messages {
+  font-size: 13px;
+  background-color: var(--muted-primary);
+}
+
+.messages .alert-success {
+  padding: 2px 0;
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
 .follow {
   display: flex;
   align-items: center;
@@ -343,6 +355,52 @@ ul {
 
 .links li {
   line-height: 2.8;
+}
+
+.login-form {
+  width: 90%;
+  max-width: 720px;
+  margin: 4.5rem auto 2.5rem auto;
+  background-color: var(--muted-primary);
+  padding: 10px 0;
+  border-radius: 12px;
+}
+
+.input-label-wrapper {
+  margin: 25px 0;
+}
+
+.form-group label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.form-group span {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.input-label-wrapper input {
+  border: none;
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #003d4a13;
+  border-radius: 5px;
+}
+
+.input-label-wrapper input:focus {
+  border: none;
+  outline: 1px solid var(--secondary);
+  outline: none;
+  background-color: #003c4a28;
+}
+
+.input-label-wrapper .button {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 15px 20px;
+  border-radius: 5px;
+  max-width: 120px;
 }
 
 .footer {
