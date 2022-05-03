@@ -33,7 +33,8 @@ admin.site.site_title = 'Eaglehr'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('webapp.urls'), name='home_page'),
-    path('user/', include('User.urls'))
+    path('jobs/', include('jobs.urls')),
+    path('user/', include('User.urls')),
 ]  # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

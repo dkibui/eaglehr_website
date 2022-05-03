@@ -1,0 +1,13 @@
+{% block content %}
+<section class="full-width">
+    <div class="subscribe">
+        <form action="/subscribe" method="POST">
+            <div>
+                <input class="input-txt" type="text" name="name" "autocomplete="off" placeholder="name">
+                <input class="input-txt" type="text" name="email" "autocomplete="off" placeholder="email">
+                <input class="submit" type="submit" value='SUBSCRIBE NOW'>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}

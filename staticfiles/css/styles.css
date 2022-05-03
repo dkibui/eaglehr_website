@@ -1,8 +1,10 @@
 :root {
   --primary: #003d4a;
-  --muted-primary: hsla(191, 100%, 15%, 0.048);
+  --muted-primary: #003c4a28;
   --danger: #c03030;
   --secondary: #db8c00;
+  --third: #11966e;
+  --fourth: #127399;
   --white: #fff;
   --links: #262626;
 }
@@ -24,6 +26,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--secondary);
 }
 
 h1,
@@ -31,6 +34,11 @@ h2,
 h3 {
   line-height: 1.375;
   margin-bottom: 8px;
+}
+
+p,
+li {
+  line-height: 1.8;
 }
 
 h1 {
@@ -385,7 +393,7 @@ ul {
   width: 100%;
   padding: 12px 14px;
   background-color: #003d4a13;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .input-label-wrapper input:focus {
@@ -431,6 +439,77 @@ ul {
 .footer li {
   margin-right: 30px;
   margin-bottom: 20px;
+}
+
+.blog {
+  border-top: 1px solid var(--muted-primary);
+  /* border-bottom: 1px solid var(--muted-primary); */
+  padding-top: 16px;
+  margin-bottom: 10px;
+  /* border-radius: 5px; */
+}
+
+.blog-container {
+  margin: 3.2rem 0;
+}
+
+.blog div:first-of-type {
+  border-top: none;
+}
+
+.blog h2 {
+  color: var(--third);
+  color: var(--fourth);
+  font-size: 21px;
+  margin-bottom: 5px;
+}
+
+.blog .date,
+.blog .author {
+  font-size: 14px;
+}
+
+.date-author {
+  color: gray;
+}
+
+.blog .date {
+  font-weight: bold;
+}
+
+.post-aside-container {
+  margin-bottom: 3.2rem;
+}
+
+.post hr {
+  border: 0;
+  border-top: 1px solid var(--muted-primary);
+  height: 0;
+}
+
+.post p,
+.post ul,
+.post ol,
+.post li,
+.blog p,
+.post h3 {
+  margin: revert;
+  padding: revert;
+  list-style: revert;
+}
+
+.post-aside-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.post-aside-container .aside {
+  padding: 1.5rem;
+}
+
+.post-aside-container .aside p {
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 520px) {
@@ -507,13 +586,46 @@ ul {
     border-bottom: 2px solid var(--secondary);
   }
 
+  .post {
+    max-width: 720px;
+    border: 1px solid var(--muted-primary);
+    padding: 28px;
+    border-radius: 5px;
+  }
+
+  .post-aside-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.2rem;
+    margin-top: 5rem;
+    position: relative;
+  }
+
+  .blog-container {
+    margin: 5rem 0;
+  }
+
+  .post-aside-container .aside {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--muted-primary);
+    border-radius: 5px;
+    height: 250px;
+    position: sticky;
+    top: 0;
+  }
+
+  .post-aside-container .btn {
+    display: block;
+    padding: 16px 22px;
+    border-radius: 5px;
+  }
+
   .home-cards,
   .events {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .header {
-    /* margin-top: 4px; */
   }
 
   .home-cards,

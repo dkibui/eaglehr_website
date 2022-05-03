@@ -123,7 +123,7 @@
       <div class="date-duration">
         Begins <span>{{ event.start_date }}</span> | Duration: <span>{{ event.duration }} day{{event.duration|pluralize }}</span>
       </div>
-      <p>{{ event.description | truncatechars:150 }}</p>
+        {{ event.description | safe | truncatechars:150 }}
       <div>
         <a href="#">
           <span>About Course</span> <i class="fas fa-chevron-right"></i>

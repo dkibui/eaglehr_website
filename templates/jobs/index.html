@@ -1,0 +1,25 @@
+{% extends "sitewide/base.html" %}
+{% block content %}
+<div class="blog-container">
+  {% for post in page_obj %}
+  <article class="width blogs">
+    <div data-id="{{post.id}}" class="blog">
+      <a href="/jobs/{{post.slug}}">
+        <h2>{{ post.title | safe | upper }}</h2>
+      </a>
+      <div class="date-author-tag">
+        <div class="date-author">
+          <div>Posted <span class="date">{{ post.date_created | timesince }}</span></div><div>Apply before 31st May</div>
+          {% comment %} <div class="author">
+            <a href="#" class="author">{{post.author}}</a>
+          </div> {% endcomment %}
+        </div>
+      </div>
+      <div class="blog-snippet">
+        {% comment %} <div>{{ post.content | safe | truncatechars:180 }}</div> {% endcomment %}
+      </div> 
+    </div>
+  </article>
+  {% endfor %}</div>
+
+{% endblock content %}
