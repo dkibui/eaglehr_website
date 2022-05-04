@@ -31,9 +31,11 @@ a {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   line-height: 1.375;
   margin-bottom: 8px;
+  color: var(--fourth);
 }
 
 p,
@@ -42,12 +44,14 @@ li {
 }
 
 h1 {
-  color: var(--primary);
-  font-size: 1.7125rem;
+  font-size: 1.5125rem;
+}
+
+h2 {
+  font-size: 1.3125rem;
 }
 
 h3 {
-  color: var(--primary);
   font-size: 1.1075rem;
 }
 
@@ -366,12 +370,7 @@ ul {
 }
 
 .login-form {
-  width: 90%;
-  max-width: 720px;
   margin: 4.5rem auto 2.5rem auto;
-  background-color: var(--muted-primary);
-  padding: 10px 0;
-  border-radius: 12px;
 }
 
 .input-label-wrapper {
@@ -392,15 +391,15 @@ ul {
   border: none;
   width: 100%;
   padding: 12px 14px;
-  background-color: #003d4a13;
-  border-radius: 2px;
+  background-color: var(--white);
+  border: 1px solid var(--muted-primary);
+  /* border-radius: 2px; */
 }
 
 .input-label-wrapper input:focus {
-  border: none;
-  outline: 1px solid var(--secondary);
+  border-bottom: 1px solid var(--secondary);
   outline: none;
-  background-color: #003c4a28;
+  background-color: var(--white);
 }
 
 .input-label-wrapper .button {
@@ -528,7 +527,7 @@ ul {
   }
 
   h1 {
-    font-size: 1.7525rem;
+    font-size: 1.6125rem;
   }
 
   .main-nav ul {
@@ -586,6 +585,15 @@ ul {
     border-bottom: 2px solid var(--secondary);
   }
 
+  .login-form {
+    width: 90%;
+    max-width: 720px;
+    margin: 5rem auto 3.2rem auto;
+    border: 1px solid var(--muted-primary);
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
   .post {
     max-width: 720px;
     border: 1px solid var(--muted-primary);
@@ -610,7 +618,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--muted-primary);
+    outline: 1px solid var(--muted-primary);
     border-radius: 5px;
     height: 250px;
     position: sticky;

@@ -3,7 +3,7 @@
 <div class="post-container">
   <article class="width post-aside-container">
     <div data-id="{{blog.id}}" class="post">
-      <h1>{{blog.title | safe | upper }}</h1>
+      <h1>{{blog.title | safe | title }}</h1>
       <div>Posted on <span>{{ blog.date_created | date:"F d, Y" }}</span> by <a href="#" class="author">{{ blog.author }}</a></div>
       <div class="margin-top body-text">
         <div class="body-p">{{ blog.content | safe }}</div>

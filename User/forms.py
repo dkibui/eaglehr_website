@@ -9,7 +9,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         help_text='Enter your first name',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'First name', 'id': 'first_name'})
+            attrs={'class': 'form-control', 'placeholder': 'Enter your first name', 'id': 'first_name'})
     )
 
     last_name = forms.CharField(
@@ -17,7 +17,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         help_text='Enter your last name',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Last name', 'id': 'last_name'})
+            attrs={'class': 'form-control', 'placeholder': 'Enter your last name', 'id': 'last_name'})
     )
 
     username = forms.CharField(
@@ -25,7 +25,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         help_text='Enter your username',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Username',  'id': 'username'})
+            attrs={'class': 'form-control', 'placeholder': 'Enter your username',  'id': 'username'})
     )
 
     email = forms.EmailField(
@@ -33,7 +33,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         help_text='Enter your email address',
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Email', 'id': 'email', 'autocomplete': 'on', })
+            attrs={'class': 'form-control', 'placeholder': 'Enter your email', 'id': 'email', 'autocomplete': 'on', })
     )
 
     password1 = forms.CharField(
@@ -41,7 +41,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         help_text='Enter password',
         widget=forms.PasswordInput(
-            attrs={'class': 'form-control', 'placeholder': 'Password', 'id': 'password1'})
+            attrs={'class': 'form-control', 'placeholder': 'Enter your password', 'id': 'password1'})
     )
 
     password2 = forms.CharField(
@@ -49,7 +49,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         help_text='Repeat your password',
         widget=forms.PasswordInput(
-            attrs={'class': 'form-control', 'placeholder': 'Confirm password', 'id': 'password2'})
+            attrs={'class': 'form-control', 'placeholder': 'Confirm your password', 'id': 'password2'})
     )
 
     class Meta:
