@@ -1,13 +1,19 @@
 :root {
   --primary: #003c4a0a;
   --primary: #003d4a;
-  --muted-primary: #003c4a28;
+  --muted-primary: #c6d3d7;
   --danger: rgb(192, 48, 48);
   --secondary: #db8c00;
   --third: #11966e;
   --fourth: #127399;
+  --five: #ffdea5;
   --white: #fff;
   --links: #262626;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 * {
@@ -137,12 +143,6 @@ ul {
 }
 
 .links .links-inner {
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.links .links-inner {
   grid-template-columns: 1fr;
 }
 
@@ -204,7 +204,7 @@ ul {
   width: 100%;
   max-width: 1100px;
   min-height: 400px;
-  background: url("/static/images/RWO6HY.jpg") no-repeat center left/cover;
+  background: url("/static/images/RWO6HY.jpg") no-repeat center right/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -327,7 +327,7 @@ ul {
 .breakout .content {
   width: 100%;
   max-width: 520px;
-  padding: 60px 16px 0 30px;
+  padding: 60px 16px 46px 30px;
 }
 
 .breakout p,
@@ -379,10 +379,11 @@ ul {
 }
 
 .links {
-  background: #f2f2f2;
+  background: var(--primary);
   color: var(--primary);
   font-size: 12px;
-  padding: 25px 0;
+  padding: 60px 0 20px 0;
+  margin-top: 2rem;
 }
 
 .links li {
@@ -431,14 +432,17 @@ ul {
 }
 
 .footer {
-  background: #f2f2f2;
-  color: #616161;
+  background: var(--primary);
+  color: var(--muted-primary);
+  margin-top: 69px;
   font-size: 12px;
-  padding-bottom: 3.25rem;
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 100vh;
 }
 
 .footer-inner i {
-  color: var(--primary);
+  color: var(--muted-primary);
 }
 
 .footer div {
@@ -613,6 +617,10 @@ ul {
     border: 1px solid var(--muted-primary);
     padding: 10px 0;
     border-radius: 5px;
+  }
+
+  .breakout .content {
+    padding: 60px 16px 0 30px;
   }
 
   .post {
