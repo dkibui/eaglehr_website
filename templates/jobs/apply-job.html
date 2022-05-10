@@ -1,0 +1,31 @@
+{% extends "sitewide/base.html" %} {% block content %}
+  
+<div class="application-form">
+  <div class="width apply-head">
+    <p>Thank you for your interest in,</p>
+    <h2><em>{{ job.title | safe | title }}</em></h2>
+  </div>
+  <form class="width" action="" method="post" enctype="multipart/form-data" autocomplte="off" novalidate>
+    {% csrf_token %} 
+    
+    {% for field in form %}
+    <div class="input-label-wrapper">
+    <div class="form-group">
+      <div><label for="{{field.label}}">{{field.label}} <span class="text-danger">*</span></label></div>
+
+      <div>{{ field }}</div>
+
+      {% for error in field.errors %} 
+        <div class="alert alert-danger">
+          <em>{{ error|escape }}</em>
+        </div>
+      {% endfor %}
+
+    </div>
+    </div>
+    {% endfor %}
+
+    <button type="submit"/>Submit Post</button>
+  </form>
+</div>
+{% endblock content %}

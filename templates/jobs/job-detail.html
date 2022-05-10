@@ -2,17 +2,17 @@
 {% block content %}
 <div class="post-container">
   <article class="width post-aside-container">
-    <div data-id="{{blog.id}}" class="post">
-      <h1>{{blog.title | safe | title }}</h1>
-      <div>Posted on <span>{{ blog.date_created | date:"F d, Y" }}</span> by <a href="#" class="author">{{ blog.author }}</a></div>
+    <div data-id="{{job.id}}" class="post">
+      <h1>{{job.title | safe | title }}</h1>
+      <div>Posted on <span>{{ job.date_created | date:"F d, Y" }}</span> by <a href="#" class="author">{{ job.author }}</a></div>
       <div class="margin-top body-text">
-        <div class="body-p">{{ blog.content | safe }}</div>
+        <div class="body-p">{{ job.content | safe }}</div>
       </div>
     </div>
     <div class="aside">
       <div>
         <p>Please apply for this role. This could be the beginning of something amazing</p>
-        <a href="apply/{{blog.id}}"><button class="btn">Apply for Position</button></a>
+        <a href="apply/{{job.id}}"><button class="btn">Apply for Position</button></a>
       </div>
     </div>
   </article>
