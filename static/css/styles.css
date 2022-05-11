@@ -2,7 +2,9 @@
   --primary: #003c4a0a;
   --primary: #003d4a;
   --muted-primary: #c6d3d7;
-  --danger: rgb(192, 48, 48);
+  --danger: #ce2727;
+  --success: #27ce63;
+  --notification: #678d8e;
   --secondary: #db8c00;
   --third: #11966e;
   --fourth: #127399;
@@ -346,14 +348,19 @@ ul {
 }
 
 .messages {
+  background-color: var(--notification);
+  color: var(--white);
   font-size: 13px;
-  background-color: var(--muted-primary);
 }
 
 .messages .alert-success {
-  padding: 2px 0;
-  background-color: var(--secondary);
-  color: var(--white);
+  background-color: var(--success);
+  padding: 5px 0;
+}
+
+.messages .alert-danger {
+  background-color: var(--danger);
+  padding: 5px 0;
 }
 
 .alert em {

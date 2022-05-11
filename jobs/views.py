@@ -52,6 +52,8 @@ def apply_job_view(request, id):
         form = ApplicationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            messages.success(
+                request, f"Thank you, your job was submitted successfully")
             return redirect('jobs:jobs-list')
         else:
             form = ApplicationForm(request.POST, request.FILES)
@@ -59,6 +61,8 @@ def apply_job_view(request, id):
                 "form": form,
                 "job": job
             }
+            messages.error(
+                request, f"Please fill all required fields")
             return render(request, 'jobs/apply-job.html', context)
 
     else:
