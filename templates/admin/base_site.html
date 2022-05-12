@@ -1,0 +1,33 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('DKIBUI site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'images/eaglehr-logo.svg' %}" height="68px"/>
+        {% comment %} 
+            {{ site_header|default:_('DKIBUI Blog admin Area') }} 
+        {% endcomment %}
+    </a>
+</h1>
+{% endblock %}
+{% comment %} 
+..........................................
+{% endcomment %}
+{% block extrastyle %}{{ block.super }}
+<style>
+:root {
+  --primary: #437e89;
+  --secondary: #003d4a;
+  {% comment %} --link-fg: #2F5286; {% endcomment %}
+  {% comment %} --link-selected-fg: #001E4A; {% endcomment %}
+}
+</style>
+{% endblock %}
+{% comment %} 
+..........................................
+{% endcomment %}
+
+{% block nav-global %}{% endblock %}
