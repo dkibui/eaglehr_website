@@ -8,10 +8,25 @@ class ApplicationForm(forms.ModelForm):
 
     resume = forms.FileField(widget=forms.FileInput(attrs={'class': 'file'}))
 
+    first_name = forms.CharField(widget=forms.TextInput, error_messages={
+        'required': 'Your first name is required'})
+    last_name = forms.CharField(widget=forms.TextInput, error_messages={
+        'required': 'Your last name is required'})
+    email = forms.CharField(widget=forms.TextInput, error_messages={
+        'required': 'Your email is required'})
+    phone = forms.CharField(widget=forms.TextInput, error_messages={
+        'required': 'Your phone number is required'})
+    cover_letter = forms.FileField(widget=forms.FileInput, error_messages={
+        'required': 'You must select your cover letter'})
+    resume = forms.FileField(widget=forms.FileInput, error_messages={
+        'required': 'You must select your resume'})
+    # reference = forms.CharField(widget=forms.TextInput, error_messages={
+    #     'required': 'You must fill your reference'})
+
     class Meta:
         model = Application
         fields = ("first_name", "last_name", "email",
-                  "phone", "cover_letter", "resume", "reference")
+                  "phone", "reference", "cover_letter", "resume", )
 
         labels = {
             'first_name': 'Your first name',
@@ -20,6 +35,7 @@ class ApplicationForm(forms.ModelForm):
 
         error_messages = {
             'first_name': {
-                'max_length': "This writer's name is too long.",
+                'max_length': "Your first name is too long.",
+                'min_length': "Your first name is too short.",
             },
         }

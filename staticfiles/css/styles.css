@@ -416,7 +416,8 @@ ul {
   font-weight: 700;
 }
 
-.input-label-wrapper input {
+.input-label-wrapper input,
+.input-label-wrapper select {
   border: none;
   width: 100%;
   padding: 12px 14px;
@@ -424,18 +425,47 @@ ul {
   border: 1px solid var(--muted-primary);
 }
 
-.input-label-wrapper input:focus {
+.input-label-wrapper select {
+  width: 60%;
+  max-width: 320px;
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  padding: 8px 14px;
+  border: 1px solid var(--muted-primary);
+}
+
+.input-label-wrapper input[type="file"] {
+  border: none;
+  padding: 1px 0 1px 0;
+}
+
+.input-label-wrapper input[type="file"]:focus {
+  border: none;
+  outline: none;
+}
+
+.input-label-wrapper input:focus,
+.input-label-wrapper select:focus {
   border-bottom: 1px solid var(--secondary);
   outline: none;
   background-color: var(--white);
 }
 
-.input-label-wrapper .button {
+.button {
   background-color: var(--primary);
   color: var(--white);
   padding: 15px 20px;
   border-radius: 5px;
+  width: 100%;
   max-width: 120px;
+  border: none;
+  outline: none;
+}
+
+.application-form .button {
+  margin-top: 0.7525rem;
+  margin-bottom: 2.2rem;
 }
 
 .footer {

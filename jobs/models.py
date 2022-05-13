@@ -47,13 +47,25 @@ class Category(models.Model):
 
 
 class Application(models.Model):
+    option = 'website'
+    WAYS_TO_FIND_US = [
+        ('website', 'Our Website'),
+        ('employee', 'Eaglehr Employee'),
+        ('social', 'Social Media'),
+        ('internet', 'Internet Search'),
+        ('friend', 'Friend'),
+        ('Newspaper', 'Newspaper'),
+    ]
     first_name = models.CharField(max_length=75)
     last_name = models.CharField(max_length=75)
     email = models.EmailField(max_length=75)
     phone = models.CharField(max_length=17)
     cover_letter = models.FileField(upload_to='applications/uploads/')
     resume = models.FileField(upload_to='applications/uploads/')
-    reference = models.CharField(max_length=255)
+    reference = models.CharField(
+        max_length=255,
+        choices=WAYS_TO_FIND_US,
+        default=option,)
     date_applied = models.DateTimeField(default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
 
