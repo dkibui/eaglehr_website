@@ -14,7 +14,7 @@ class Event(models.Model):
     duration = models.IntegerField(
         default=1, help_text='Duration of course in days')
     cost = models.FloatField(default=10000, blank=True, null=True)
-    publish = models.IntegerField(choices=STATUS, default=0)
+    is_active = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self) -> str:
         return self.name
