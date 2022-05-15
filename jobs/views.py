@@ -7,6 +7,11 @@ from .forms import ApplicationForm
 from .models import Post
 from datetime import date
 
+# import phonenumbers
+# from phonenumbers import timezone
+
+# print(phonenumbers.is_valid_number("+40721234567"))
+
 current_year = date.today().year
 
 
@@ -14,7 +19,7 @@ per_page = 10
 count = 0
 
 
-def post_list(request):
+def job_list(request):
     query = request.GET.get('query')
     context = {
         "title": f"Sharing sought after python and django tips and tricks for web development. Here to help you upskill your web development in {current_year}"}

@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {},
+  "terminal.integrated.profiles.windows": {
+    "PowerShell -nologo": {
+      "source": "PowerShell",
+      "args": ["-nologo"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell"
+}

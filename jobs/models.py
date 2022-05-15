@@ -7,6 +7,17 @@ from django.contrib.auth.models import User
 # from taggit.managers import TaggableManager
 
 from ckeditor.fields import RichTextField
+from .reference_choices import default_option, WAYS_TO_FIND_US
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Categories'
 
 
 # Create your models here.
@@ -17,12 +28,12 @@ STATUS = (
 
 
 class Post(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     content = RichTextField()
     slug = models.SlugField(max_length=255, unique=True)
-    # tags = TaggableManager()
-    # resume = models.FileField(upload_to='uploads')
     date_created = models.DateTimeField(default=timezone.now)
+    apply_by_date = models.DateTimeField(default=timezone.now)
     updated_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, default=0,
                                on_delete=models.CASCADE)
@@ -35,37 +46,19 @@ class Post(models.Model):
         return self.title
 
 
-class Category(models.Model):
-    title = models.CharField(max_length=255)
-    slug = models.SlugField(max_length=255, unique=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Categories'
-
-
 class Application(models.Model):
-    option = 'website'
-    WAYS_TO_FIND_US = [
-        ('website', 'Our Website'),
-        ('employee', 'Eaglehr Employee'),
-        ('social', 'Social Media'),
-        ('internet', 'Internet Search'),
-        ('friend', 'Friend'),
-        ('Newspaper', 'Newspaper'),
-    ]
+
     first_name = models.CharField(max_length=75)
     last_name = models.CharField(max_length=75)
     email = models.EmailField(max_length=75)
-    phone = models.CharField(max_length=17)
-    cover_letter = models.FileField(upload_to='applications/uploads/')
+    phone = models.CharField(max_length=13, )
+    cover_letter = models.FileField(
+        upload_to='applications/uploads/')
     resume = models.FileField(upload_to='applications/uploads/')
     reference = models.CharField(
         max_length=255,
         choices=WAYS_TO_FIND_US,
-        default=option,)
+        default=default_option)
     date_applied = models.DateTimeField(default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
 

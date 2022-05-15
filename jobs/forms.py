@@ -1,5 +1,8 @@
+import phonenumbers
+from phonenumbers import timezone
 from django import forms
 from .models import Post, Application
+from .reference_choices import WAYS_TO_FIND_US
 
 
 class ApplicationForm(forms.ModelForm):
@@ -20,22 +23,21 @@ class ApplicationForm(forms.ModelForm):
         'required': 'You must select your cover letter'})
     resume = forms.FileField(widget=forms.FileInput, error_messages={
         'required': 'You must select your resume'})
-    # reference = forms.CharField(widget=forms.TextInput, error_messages={
-    #     'required': 'You must fill your reference'})
+    reference = forms.ChoiceField(
+        choices=WAYS_TO_FIND_US, label='Tell us how you found this job?',)
 
     class Meta:
         model = Application
         fields = ("first_name", "last_name", "email",
                   "phone", "reference", "cover_letter", "resume", )
 
-        labels = {
-            'first_name': 'Your first name',
-            'reference': 'How did you hear about this is job?',
-        }
+    # def clean_phone(self, *args, **kwags):
+    #     phone = self.cleaned_data.get('phone')
+    #     if not phone == '0728494090':
+    #         raise forms.ValidationError('Please enter a valid phone number')
+    #     return phone
 
-        error_messages = {
-            'first_name': {
-                'max_length': "Your first name is too long.",
-                'min_length': "Your first name is too short.",
-            },
-        }
+        # parsed_phone_number = phonenumbers.parse(str(phone), 'KE')
+        # if phonenumbers.is_valid_number(parsed_phone_number) == False:
+        #     raise forms.ValidationError('Please enter a valid phone number')
+        # return phone

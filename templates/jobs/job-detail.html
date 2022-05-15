@@ -4,7 +4,7 @@
   <article class="width post-aside-container">
     <div data-id="{{job.id}}" class="post">
       <h1>{{job.title | safe | title }}</h1>
-      <div>Posted on <span>{{ job.date_created | date:"F d, Y" }}</span> by <a href="#" class="author">{{ job.author }}</a></div>
+      <div class="blog-detail-date">Posted on <span>{{ job.date_created | date:"F d, Y" }}</span> by <a href="#" class="author">{{ job.author }}</a></div>
       <div class="margin-top body-text">
         <div class="body-p">{{ job.content | safe }}</div>
       </div>
