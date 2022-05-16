@@ -48,9 +48,9 @@ class Post(models.Model):
 
 class Application(models.Model):
 
-    first_name = models.CharField(max_length=75)
-    last_name = models.CharField(max_length=75)
-    email = models.EmailField(max_length=75)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=55)
     phone = models.CharField(max_length=13, )
     cover_letter = models.FileField(
         upload_to='applications/uploads/')
