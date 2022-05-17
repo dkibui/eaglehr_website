@@ -10,8 +10,6 @@ from datetime import date
 # import phonenumbers
 # from phonenumbers import timezone
 
-# print(phonenumbers.is_valid_number("+40721234567"))
-
 current_year = date.today().year
 
 
@@ -58,7 +56,7 @@ def apply_job_view(request, id):
         if form.is_valid():
             form.save()
             messages.success(
-                request, f"Thank you, your job was submitted successfully")
+                request, f"Thank you, your application was submitted successfully")
             return redirect('jobs:jobs-list')
         else:
             form = ApplicationForm(request.POST, request.FILES)
