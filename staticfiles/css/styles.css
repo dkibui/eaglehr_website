@@ -13,18 +13,25 @@
   --links: #262626;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  margin: revert;
+}
+
+html,
 body {
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: linear-gradient(
@@ -34,7 +41,6 @@ body {
   );
   color: #000;
   font-size: 15px;
-  line-height: 1.5;
 }
 
 .banner-message {
@@ -45,7 +51,7 @@ body {
 .banner-message p {
   font-size: 12px;
   color: var(--white);
-  line-height: initial;
+  margin: 0;
 }
 
 a {
@@ -58,7 +64,6 @@ h2,
 h3,
 h4 {
   line-height: 1.375;
-  margin-bottom: 8px;
   color: var(--fourth);
 }
 
@@ -222,8 +227,18 @@ ul {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-bottom: 50px;
-  margin-bottom: 20px;
+}
+
+.services-header {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 400px;
+  background: url("/static/images/RWO6HY.jpg") no-repeat center right/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
 }
 
 .header p {
@@ -281,6 +296,10 @@ ul {
   max-width: 1100px;
   margin: 0 auto;
   margin-bottom: 2.8rem;
+}
+
+.services {
+  margin-top: 3.2rem;
 }
 
 .event-wrapper {
@@ -385,7 +404,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 30px 0 30px;
+  margin: 16px 0 16px;
 }
 
 .follow i {
@@ -661,6 +680,11 @@ ul {
 
   .main-nav li a:hover {
     border-bottom: 2px solid var(--secondary);
+  }
+
+  .services {
+    margin-top: 5rem;
+    max-width: 660px;
   }
 
   .login-form,

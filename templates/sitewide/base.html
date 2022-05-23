@@ -19,7 +19,9 @@
     {% include "sitewide/includes/nav.html" %}
     {% include "sitewide/includes/messages.html" %}
     {% include "sitewide/includes/social-media.html" %}
-    {% block content %} {% endblock content %}
+    <div class="body-text">
+      {% block content %} {% endblock content %}
+    </div>
     {% include "sitewide/includes/footer.html" %}
   </body>
 </html>

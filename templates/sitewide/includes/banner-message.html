@@ -1,7 +1,7 @@
-{% if banner_message %}
+{% if banner_message.message %}
 <div class="banner-message">
-    <div class="width">
-      <p>{{ banner_message.message | safe }}</p>
-    </div>
+  <div class="width">
+    {{ banner_message.message | safe }}
+  </div>
 </div>
 {% endif %}
