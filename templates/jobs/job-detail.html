@@ -1,8 +1,8 @@
 {% extends "sitewide/base.html" %}  
 {% block content %}
 <div class="post-container">
-  <article class="width post-aside-container">
-    <div data-id="{{job.id}}" class="post">
+  <article class="width main-aside-wrapper">
+    <div data-id="{{job.id}}" class="main">
       <h1>{{job.title | safe | title }}</h1>
       <div class="blog-detail-date">Posted on <span>{{ job.date_created | date:"F d, Y" }}</span> by <a href="#" class="author">{{ job.author }}</a></div>
       <div class="margin-top body-text">
@@ -12,7 +12,7 @@
     <div class="aside">
       <div>
         <p>Please apply for this role. This could be the beginning of something amazing</p>
-        <a href="apply/{{job.id}}"><button class="btn">Apply for Position</button></a>
+        <a href="apply/{{job.id}}"><button class="button">Apply for Position</button></a>
       </div>
     </div>
   </article>
