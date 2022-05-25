@@ -299,8 +299,6 @@ ul {
 .aside {
   outline: 1px solid var(--muted-primary);
   border-radius: 5px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
   padding: 1rem;
 }
 
@@ -593,9 +591,9 @@ ul {
   list-style: revert;
 }
 
-/* .aside a {
-  margin-bottom: 1.5rem;
-} */
+.aside em {
+  color: var(--fourth);
+}
 
 @media (min-width: 520px) {
   .home-cards,
@@ -706,6 +704,9 @@ ul {
   .main,
   .aside {
     padding: 2.2rem;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   .aside {
