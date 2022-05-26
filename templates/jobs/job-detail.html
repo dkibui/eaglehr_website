@@ -1,17 +1,26 @@
 {% extends "sitewide/base.html" %}  
 {% block content %}
+<section class="width big-margin-top">
+  <h1>Important message to note</h1>
+  <p>Please note that Eaglehr is an equal opportunity employer. We do not discriminate on the basis of race, gender, ethnicity or otherwise. It is free to apply for jobs advertised on this website.
+  </p>
+  {% comment %} <ul>
+    <li>Do not make any payment without confirming with the BrighterMonday Customer Support Team.</li>
+    <li>If you think this advert is not genuine, please report it via the Report Job link below.</li>
+  </ul> {% endcomment %}
+</section>
 <div class="post-container">
   <article class="width main-aside-wrapper">
     <div data-id="{{job.id}}" class="main">
       <h1>{{job.title | safe | title }}</h1>
-      <div class="blog-detail-date">Posted on <span>{{ job.date_created | date:"F d, Y" }}</span> by <a href="#" class="author">{{ job.author }}</a></div>
+      <div class="blog-detail-date">Posted on <span>{{ job.date_created | date:"F d, Y" }}</span></div>
       <div class="margin-top body-text">
         <div class="body-p">{{ job.content | safe }}</div>
       </div>
     </div>
     <div class="aside">
       <div>
-        <p>Apply for the role of <strong><em>{{job.title | safe | title }}</em></strong>.</p>
+        <p>Apply for the role of <em>{{job.title | safe | title }}</em></p>
         <p>This could be the beginning of something amazing. Good luck!</p>
         <a href="apply/{{job.id}}"><button class="button">Apply for Position</button></a>
       </div>

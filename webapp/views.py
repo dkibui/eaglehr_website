@@ -25,3 +25,10 @@ def services(request):
         'title': 'Services page',
     }
     return render(request, 'webapp/services.html', context)
+
+
+def african_talent(request):
+    context = {
+        'title': 'African talent page',
+    }
+    return render(request, 'webapp/african-talent.html', context)
