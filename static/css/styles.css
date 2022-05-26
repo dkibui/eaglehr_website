@@ -55,7 +55,7 @@ body {
 
 .image-text-grid {
   display: grid;
-  background-color: var(--fourth);
+  background-color: var(--third);
   grid-template-columns: 1fr;
   row-gap: 0.75rem;
   border-radius: 8px;
@@ -572,9 +572,10 @@ select {
 .footer {
   color: var(--muted-primary);
   font-size: 12px;
-  margin-top: 69px;
   position: sticky;
   top: 100vh;
+  margin-top: var(--margin-top);
+  background-color: var(--muted-primary);
 }
 
 .footer .contacts {
