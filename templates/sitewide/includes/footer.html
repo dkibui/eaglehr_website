@@ -1,7 +1,29 @@
 {% load static %}
 <footer class="footer">
-  <div class="footer-inner wide-width">
-    <div><i class="fas fa-globe fa-2x"></i> EagleHR&#174 (Registered in Kenya) | &copy {% now "Y" %}</div>
+  <div class="footer-inner">
+   <div class="wide-width">
+    <div class="contacts">
+      <h3>Eaglehr Consultants</h3>
+      <div><i class="fas fa-map-marker-alt"></i> <p>10th Floor Western Heights, Westlands Nairobi, Kenya.</p></div>
+      <div><i class="fas fa-envelope-open-text"></i> <p>info@eaglehr.co.ke</p></div>
+      <div><i class="fas fa-phone-volume"></i> <p>+254 700 769 770</p></div>
+      <div><i class="fas fa-mail-bulk"></i>
+        <p>P.O.Box 33929 - 00600
+        Nairobi, Kenya.</p>
+      </div>
+    </div>
   </div>
+</div>
+<div class="footer-end">
+  <div class="globe">
+    <div>
+      <i class="fas fa-globe fa-2x"></i> 
+    </div>
+    <div>
+      <p>EagleHR&#174 is Registered in Kenya</p>
+    </div>
+  </div>
+  <p>&copy {% now "Y" %}</p>
+</div>
 </footer>
 <script src="{% static 'js/app.js' %}"></script>
