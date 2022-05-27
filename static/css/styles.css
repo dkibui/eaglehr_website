@@ -604,9 +604,10 @@ select {
 .footer-end {
   display: grid;
   justify-content: center;
-  background-color: hsla(0, 0%, 100%, 0.025);
+  /* background-color: hsla(0, 0%, 100%, 0.025); */
+  border-top: 1px solid hsla(0, 0%, 100%, 0.15);
   text-align: center;
-  opacity: 0.9575;
+  opacity: 0.75;
   padding: 1.5rem 0;
 }
 
