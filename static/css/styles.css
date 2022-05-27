@@ -608,7 +608,16 @@ select {
   border-top: 1px solid hsla(0, 0%, 100%, 0.15);
   text-align: center;
   opacity: 0.75;
-  padding: 1.5rem 0;
+  padding-top: 0.75725rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer-end svg {
+  display: block;
+  fill: var(--muted-primary);
+  max-width: 56px;
+  margin: auto;
+  margin-bottom: 26px;
 }
 
 .footer-end p {
