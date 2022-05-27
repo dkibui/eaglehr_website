@@ -575,24 +575,27 @@ select {
   position: sticky;
   top: 100vh;
   margin-top: var(--margin-top);
-  background-color: var(--muted-primary);
+  background-color: var(--primary);
 }
 
-.footer .contacts {
+.footer .contacts,
+.useful-links {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 0.75rem;
 }
 
 .footer .contacts *,
-.footer .globe * {
+.footer .globe *,
+.useful-links * {
   margin: 0;
   padding: 0;
   color: var(--muted-primary);
 }
 
 .globe,
-.contacts div {
+.contacts div,
+.useful-links div {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -601,7 +604,7 @@ select {
 .footer-end {
   display: grid;
   justify-content: center;
-  background-color: var(--primary);
+  background-color: hsla(0, 0%, 100%, 0.025);
   text-align: center;
   opacity: 0.9575;
   padding: 1.5rem 0;
@@ -619,6 +622,17 @@ select {
 .footer ul {
   display: flex;
   flex-wrap: wrap;
+}
+
+.useful-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.footer-flex-items a {
+  display: block;
+  color: var(--muted-primary);
 }
 
 .blog {
@@ -846,5 +860,16 @@ select {
   .news-events h2 {
     margin-top: 5.725rem;
     margin-bottom: 32px;
+  }
+
+  .footer-flex-items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .useful-links {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.6rem;
+    margin-top: 0;
   }
 }
