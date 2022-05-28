@@ -6,6 +6,11 @@ app_name = 'webapp'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('contact/', views.contact, name='contact'),
     path('services/', views.services, name='services'),
+    path('training/', views.training, name='training'),
+    path('hr-life-cycle/', views.hr_life_cycle, name='hr-life-cycle'),
+    path('outsourcing/', views.outsourcing, name='outsourcing'),
+    path('recruitment/', views.recruitment, name='recruitment'),
     path('african-talent/', views.african_talent, name='african-talent'),
 ]

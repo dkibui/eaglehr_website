@@ -498,6 +498,7 @@ h3 {
 }
 
 .input-label-wrapper input,
+.input-label-wrapper textarea,
 .input-label-wrapper select {
   border: none;
   width: 100%;
@@ -515,6 +516,14 @@ h3 {
   word-spacing: inherit;
   padding: 8px 14px;
   border: 1px solid var(--muted-primary);
+}
+
+.contacts .input-label-wrapper {
+  margin-top: 2.5rem;
+}
+
+.input-label-wrapper legend {
+  padding: 0 0.245rem;
 }
 
 /* .......................................... */
@@ -578,6 +587,30 @@ select {
   background-color: var(--primary);
 }
 
+.contact-page {
+  margin-top: var(--margin-top);
+}
+
+.contact-page .contacts div {
+  font-size: 13px;
+}
+
+.contact-page .contacts p {
+  margin-bottom: 2.5rem;
+}
+
+.contact-page .contacts i {
+  font-size: 19px;
+}
+
+.contacts div {
+  margin-bottom: 10px;
+}
+
+.contacts div i {
+  color: var(--fourth);
+}
+
 .footer .contacts,
 .useful-links {
   display: grid;
@@ -604,8 +637,8 @@ select {
 .footer-end {
   display: grid;
   justify-content: center;
-  background-color: hsla(0, 0%, 100%, 0.062);
-  border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+  /* background-color: hsla(0, 0%, 100%, 0.068); */
+  border-top: 1px solid hsla(0, 0%, 100%, 0.103);
   text-align: center;
   opacity: 0.75;
   padding: 1.5rem 0;
@@ -629,6 +662,19 @@ select {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
+}
+
+.useful-links a {
+  text-transform: uppercase;
+  /* font-weight: 600; */
+}
+
+.useful-links a:focus {
+  color: var(--muted-primary);
+}
+
+.useful-links a:hover {
+  color: var(--secondary);
 }
 
 .footer-flex-items a {
