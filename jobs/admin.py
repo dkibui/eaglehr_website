@@ -4,10 +4,21 @@ import datetime
 from . import models
 
 
+@admin.action(description='Activate selected jobs')
+def activate_job(modeladmin, request, queryset):
+    queryset.update(active=1)
+
+
+@admin.action(description='Deactivate selected jobs')
+def deactivate_job(modeladmin, request, queryset):
+    queryset.update(active=0)
+
+
 class PostAdmin(admin.ModelAdmin):
     def date_posted(self, obj):
         return obj.date_created.date()
 
+    actions = [activate_job, deactivate_job]
     list_display = ('title', 'date_posted', 'active')
     search_fields = ['title', 'content']
     list_filter = ("active", "author")

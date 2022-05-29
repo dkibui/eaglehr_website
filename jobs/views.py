@@ -41,11 +41,21 @@ def post_list_tag_filter(request, tag_slug=None):
 
 
 def job_detail(request, slug):
-    job = Post.objects.get(slug=slug)
-    context = {
-        "title": f"{job.title} - {current_year}",
-        "job": job
-    }
+    context = {}
+    path = request.path
+    host = request.get_host()
+    print(host+path)
+    try:
+        job = Post.objects.get(slug=slug)
+        context['job'] = job
+    except:
+        messages.error(
+            request, f'This page is not available: {host+path}')
+        return redirect('jobs:jobs-list')
+    if job.active != 1:
+        messages.error(
+            request, f'{host+path} is currently not available')
+        return redirect('jobs:jobs-list')
     return render(request, 'jobs/job-detail.html', context)
 
 

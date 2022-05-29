@@ -118,7 +118,7 @@
 <div class="events">
   {% if events %} 
     {% for event in events %}
-    <div class="event-wrapper">
+    {% comment %} <div class="event-wrapper">
       <div class="event">
         <h3>{{ event.name }}</h3>
         <div class="date-duration">
@@ -130,6 +130,22 @@
           <a href="#">
             <span>About Course</span> <i class="fas fa-chevron-right"></i>
           </a>
+        </div>
+      </div>
+    </div> {% endcomment %}
+    <div class="event-card">
+      <div class="event-card-wrapper">
+        <div class="date">
+          <span class="year">Training starts <em>{{ event.start_date }}</em></span>
+        </div>
+        <div class="data">
+          <div class="content">
+            <span class="duration">Course duration {{ event.duration }} day{{event.duration|pluralize }}</span>
+            <h1 class="title">
+              <a href="#">{{ event.name }}</a>
+            </h1>
+            {{ event.description | safe | truncatechars:60 }}
+          </div>
         </div>
       </div>
     </div>

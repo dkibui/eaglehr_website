@@ -21,12 +21,6 @@ class Category(models.Model):
 
 
 # Create your models here.
-STATUS = (
-    (0, "No"),
-    (1, "Yes")
-)
-
-
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
@@ -37,7 +31,8 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, default=0,
                                on_delete=models.CASCADE)
-    active = models.IntegerField(choices=STATUS, default=0)
+    active = models.BooleanField(
+        default=False, help_text='Select to publish this job on the job portal page. De-select to hide this job.')
 
     class Meta:
         ordering = ['-date_created', 'author']
