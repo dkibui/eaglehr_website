@@ -118,37 +118,19 @@
 <div class="events">
   {% if events %} 
     {% for event in events %}
-    {% comment %} <div class="event-wrapper">
-      <div class="event">
-        <h3>{{ event.name }}</h3>
-        <div class="date-duration">
-          <strong>Begins <em>{{ event.start_date }}</em> | Duration
-          <em>{{ event.duration }} day{{event.duration|pluralize }}</em></strong>
-        </div>
-        {{ event.description | safe | truncatechars:150 }}
-        <div>
-          <a href="#">
-            <span>About Course</span> <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
+    <article class="event-card">
+      <section class="event-card-content">
+        <span class="month">{{ event.start_date | date:'F' }}</span>
+        <span class="date">{{ event.start_date.day }}</span>
+        <span class="year">{{ event.start_date.year }}</span>
+      </section>
+      <div class="body-text">
+        <a href="/"><h3>{{ event.name }}</h3></a>
+        <div class="duration"><p>Course duration {{ event.duration }} day{{event.duration|pluralize }}</p></div>
+        <div><p>Cost Ksh {{ event.cost }}/=</p></div>
+        {% comment %} <div><p>Location: Radison Blue Nairobi</p></div> {% endcomment %}
       </div>
-    </div> {% endcomment %}
-    <div class="event-card">
-      <div class="event-card-wrapper">
-        <div class="date">
-          <span class="year">Training starts <em>{{ event.start_date }}</em></span>
-        </div>
-        <div class="data">
-          <div class="content">
-            <span class="duration">Course duration {{ event.duration }} day{{event.duration|pluralize }}</span>
-            <h1 class="title">
-              <a href="#">{{ event.name }}</a>
-            </h1>
-            {{ event.description | safe | truncatechars:60 }}
-          </div>
-        </div>
-      </div>
-    </div>
+    </article>
     {% endfor %}
   {% else %} 
     <p>
@@ -170,18 +152,4 @@
     </a>
   </div>
 </section>
-
-{% comment %}
-<section class="links">
-  <div class="links-inner wide-width">
-    <ul>
-      <li>
-        <h3>EagleHR Consultants</h3>
-      </li>
-      <li><a href="#">Careers</a></li>
-      <li><a href="#">About EagleHR</a></li>
-      <li><a href="#">Latest news</a></li>
-    </ul>
-  </div>
-</section>
-{% endcomment %} {% endblock content %}
+{% endblock content %}

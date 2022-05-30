@@ -2,6 +2,7 @@
   --primary: #003c4a0a;
   --primary: #003d4a;
   --muted-primary: #c6d3d7;
+  --muted-primary2: #d5e0e4;
   --danger: #e41818;
   --success: #27ce63;
   --notification: #678d8e;
@@ -134,90 +135,70 @@ h3 {
 }
 
 /* ............................................................. */
+
 .event-card {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  overflow: hidden;
-}
-
-.event-card .event-card-wrapper {
-  background-color: #fff;
-  min-height: 320px;
-  position: relative;
-  overflow: hidden;
-}
-
-.event-card .event-card-wrapper:hover .data {
-  transform: translateY(0);
-}
-
-.event-card .data {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  transform: translateY(calc(70px + 1em));
-  transition: transform 0.3s;
-}
-
-.event-card .data .content {
-  padding: 1em;
-  position: relative;
-  z-index: 1;
-}
-
-.event-card .duration {
-  display: inline-block;
-  padding-bottom: 3px;
-  font-size: 12px;
-  border-bottom: 3px solid var(--muted-primary);
+  background-color: var(--muted-primary2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.2rem;
+  color: rgb(70, 84, 139);
   color: var(--fourth);
-  font-weight: 700;
-}
-
-.event-card .title {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.event-card .text {
-  height: 70px;
-  margin: 0;
-}
-
-.event-card .event-card-wrapper {
-  background: url("/static/images/explore-learning.jpg") no-repeat center
-    center/cover;
+  padding: 2rem;
 }
 
 .event-card .date {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--fourth);
-  color: #fff;
-  padding: 0.8em;
-}
-
-.event-card .date span {
-  display: block;
-  text-align: left;
-}
-
-.event-card .date .year,
-.event-card .date .day {
-  font-size: 12px;
-}
-
-.event-card .content {
-  background-color: #fff;
-  box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
-}
-
-.event-card .title a {
+  font-size: 3.2em;
+  font-family: monospace;
+  font-weight: bolder;
   color: var(--fourth);
+}
+
+.event-card .month,
+.event-card .year {
+  display: block;
+  font-size: 1.725em;
+  font-weight: light;
+  font-family: monospace;
+  color: var(--fourth);
+}
+
+.event-card * {
+  margin: 0;
+  padding: 0;
+}
+
+.body-text h3 {
+  display: inline-block;
+}
+
+.body-text .duration {
+  margin: 12px 0;
+}
+
+.events .body-text p {
+  font-size: 12px;
+  /* margin-bottom: 12px; */
+  font-weight: 700;
+  padding-bottom: 5px;
+  display: inline-block;
+  border-bottom: 4px solid rgba(29, 38, 173, 0.185);
+}
+
+.event-card a {
+  text-decoration: none;
+  color: rgba(57, 68, 114, 0.74);
+  font-size: 13px;
+  display: inline-block;
+}
+
+.event-card a::after {
+  content: "";
+  background-color: rgba(143, 47, 47, 0.185);
+  display: block;
+  margin-top: 8px;
+  width: 60px;
+  height: 4px;
 }
 
 /* ............................................................. */
@@ -971,9 +952,9 @@ select {
   }
 
   .aside {
-    height: fit-content;
     position: sticky;
     top: 0;
+    height: fit-content;
   }
 
   .post-aside-container .btn {
@@ -982,9 +963,12 @@ select {
     border-radius: 5px;
   }
 
-  .home-cards,
-  .events {
+  .home-cards {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .events {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .home-cards,

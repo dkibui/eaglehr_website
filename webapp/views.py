@@ -14,7 +14,7 @@ def index(request):
         banner_message = 'Unable to fetch message'
 
     events = Event.objects.all().filter(is_active=1).filter(
-        start_date__gt=current_time).order_by('start_date')[:4]
+        start_date__gt=current_time).order_by('start_date')[:3]
 
     context['events'] = events
     return render(request, 'webapp/index.html', context)
