@@ -127,8 +127,8 @@
       <div class="body-text">
         <a href="/"><h3>{{ event.name }}</h3></a>
         <div class="duration"><p>Course duration {{ event.duration }} day{{event.duration|pluralize }}</p></div>
-        <div><p>Cost Ksh {{ event.cost }}/=</p></div>
-        {% comment %} <div><p>Location: Radison Blue Nairobi</p></div> {% endcomment %}
+        <div class="cost"><p>Cost Ksh {{ event.cost }}/=</p></div>
+        <div><p>At Radison Blue, Nairobi</p></div>
       </div>
     </article>
     {% endfor %}

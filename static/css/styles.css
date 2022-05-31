@@ -2,7 +2,7 @@
   --primary: #003c4a0a;
   --primary: #003d4a;
   --muted-primary: #c6d3d7;
-  --muted-primary2: #d5e0e4;
+  --muted-primary2: #e3ebee;
   --danger: #e41818;
   --success: #27ce63;
   --notification: #678d8e;
@@ -176,13 +176,16 @@ h3 {
   margin: 12px 0;
 }
 
+.body-text .cost {
+  margin-bottom: 12px;
+}
+
 .events .body-text p {
   font-size: 12px;
-  /* margin-bottom: 12px; */
   font-weight: 700;
   padding-bottom: 5px;
   display: inline-block;
-  border-bottom: 4px solid rgba(29, 38, 173, 0.185);
+  border-bottom: 4px solid rgba(79, 135, 168, 0.251);
 }
 
 .event-card a {
@@ -194,7 +197,7 @@ h3 {
 
 .event-card a::after {
   content: "";
-  background-color: rgba(143, 47, 47, 0.185);
+  background-color: rgba(79, 168, 98, 0.351);
   display: block;
   margin-top: 8px;
   width: 60px;
@@ -408,7 +411,6 @@ h3 {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
-  margin-bottom: 2.8rem;
 }
 
 .main-aside-wrapper {
@@ -649,7 +651,7 @@ select {
 
 .footer-inner {
   background: var(--primary);
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2.5rem 0;
 }
 
 .footer {
@@ -735,7 +737,7 @@ select {
 .useful-links {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 3.5rem;
 }
 
 .useful-links a {
