@@ -128,7 +128,7 @@
         <a href="/"><h3>{{ event.name }}</h3></a>
         <div class="duration"><p>Course duration {{ event.duration }} day{{event.duration|pluralize }}</p></div>
         <div class="cost"><p>Cost Ksh {{ event.cost }}/=</p></div>
-        <div><p>At Radison Blue, Nairobi</p></div>
+        <div><p>At {{ event.location }}</p></div>
       </div>
     </article>
     {% endfor %}

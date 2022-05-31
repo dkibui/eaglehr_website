@@ -14,6 +14,7 @@ class Event(models.Model):
     duration = models.IntegerField(
         default=1, help_text='Duration of course in days')
     cost = models.FloatField(default=10000, blank=True, null=True)
+    location = models.CharField(max_length=255)
     is_active = models.BooleanField(
         default=False, help_text='Display this event on upcoming events section on homepage. Only the first 4 are displayed.')
 
