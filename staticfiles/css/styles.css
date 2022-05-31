@@ -159,7 +159,6 @@ h3 {
   display: block;
   font-size: 1.725em;
   font-weight: light;
-  font-family: monospace;
   color: var(--fourth);
 }
 
@@ -641,6 +640,7 @@ select {
   color: var(--white);
   padding: 15px 20px;
   border-radius: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   min-width: 120px;
   border: none;
@@ -657,6 +657,7 @@ select {
 .footer {
   color: var(--muted-primary);
   font-size: 12px;
+  position: -webkit-sticky;
   position: sticky;
   top: 100vh;
   margin-top: var(--margin-top);
@@ -954,9 +955,11 @@ select {
   }
 
   .aside {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    height: fit-content;
+    height: min-content;
+    /* height: fit-content; */
   }
 
   .post-aside-container .btn {

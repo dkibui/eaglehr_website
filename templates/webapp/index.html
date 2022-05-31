@@ -120,7 +120,7 @@
     {% for event in events %}
     <article class="event-card">
       <section class="event-card-content">
-        <span class="month">{{ event.start_date | date:'F' }}</span>
+        <span class="month">{{ event.start_date | date:'M' }}.</span>
         <span class="date">{{ event.start_date.day }}</span>
         <span class="year">{{ event.start_date.year }}</span>
       </section>
