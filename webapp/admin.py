@@ -26,7 +26,12 @@ def deactivate_banner_message(modeladmin, request, queryset):
     queryset.update(is_active=0)
 
 
+@admin.action(description='Activate selected banner messages')
+def activate_banner_message(modeladmin, request, queryset):
+    queryset.update(is_active=1)
+
+
 @admin.register(BannerMessage)
 class EventAdmin(admin.ModelAdmin):
-    actions = [deactivate_banner_message]
+    actions = [activate_banner_message, deactivate_banner_message]
     list_display = ['name', 'is_active']
