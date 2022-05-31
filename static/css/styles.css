@@ -139,7 +139,7 @@ h3 {
 .event-card {
   background-color: var(--muted-primary2);
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   gap: 2.2rem;
   color: rgb(70, 84, 139);
@@ -458,7 +458,6 @@ h3 {
 .home-cards a,
 .event a {
   display: inline-block;
-  padding-top: 10px;
   color: var(--secondary);
 }
 
