@@ -162,6 +162,10 @@ h3 {
   color: var(--fourth);
 }
 
+.event-card .year {
+  padding-bottom: 12px;
+}
+
 .event-card * {
   margin: 0;
   padding: 0;
@@ -171,20 +175,30 @@ h3 {
   display: inline-block;
 }
 
-.body-text .duration {
-  margin: 12px 0;
-}
-
-.body-text .cost {
-  margin-bottom: 12px;
-}
-
 .events .body-text p {
   font-size: 12px;
   font-weight: 700;
   padding-bottom: 5px;
   display: inline-block;
   border-bottom: 4px solid rgba(79, 135, 168, 0.251);
+}
+
+.body-text .duration {
+  margin: 5px 0;
+  line-height: 1.2;
+}
+
+.body-text .cost {
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.body-text .location {
+  margin-bottom: 0;
+}
+
+.body-text .location p {
+  padding-bottom: 5px;
 }
 
 .event-card a {

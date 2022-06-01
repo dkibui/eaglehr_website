@@ -184,12 +184,12 @@ h3 {
 }
 
 .body-text .duration {
-  margin: 7px 0;
+  margin: 5px 0;
   line-height: 1.2;
 }
 
 .body-text .cost {
-  margin-bottom: 7px;
+  margin-bottom: 5px;
   line-height: 1.2;
 }
 
@@ -198,7 +198,7 @@ h3 {
 }
 
 .body-text .location p {
-  padding-bottom: 7px;
+  padding-bottom: 5px;
 }
 
 .event-card a {
