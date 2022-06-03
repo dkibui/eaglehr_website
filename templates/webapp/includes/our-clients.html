@@ -5,21 +5,6 @@
     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
 />
 <style>
-    {% comment %} html,
-    body {
-        position: relative;
-        height: 100%;
-    }
-
-    body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-    } {% endcomment %}
-
     .swiper {
         width: 100%;
         max-width: 1100px;
@@ -51,14 +36,20 @@
     }
 
     .swiper-slide img {
-        max-height: 72px;
+        max-height: 45px;
+    }
+    
+    @media (min-width: 980px) {
+        .swiper-slide img {
+            max-height: 64px;
+        }
     }
 
     {% comment %} 
     .slide-content-container {
-        padding: 1.5rem;
-        border: 1px solid #e3ebee;
+        padding: 0.75rem;
     } 
+    border: 1px solid #e3ebee;
     {% endcomment %}
 
     .swiper-horizontal > .swiper-pagination-bullets,
@@ -156,11 +147,11 @@
 
         breakpoints: {
             320: {
-            slidesPerView: 2,
+            slidesPerView: 4,
             },
 
             450: {
-                slidesPerView: 3,
+                slidesPerView: 4,
             },
 
             720: {
