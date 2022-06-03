@@ -1,0 +1,146 @@
+{% extends "sitewide/base.html" %} 
+{% load static %} 
+{% block stylesheet %}
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+<style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    .swiper {
+        width: 100%;
+        max-width: 1100px;
+        min-height: auto;
+        padding-bottom: 26px;
+        margin-top: 1.2rem;
+    }
+
+    .swiper-slide {
+        height: auto;
+        {% comment %} text-align: center; {% endcomment %}
+        font-size: 15px;
+        line-height: 1.7;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .slide-content-container {
+        padding: 1.5rem;
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        bottom: 0;
+    }
+    
+    .swiper-pagination-bullet {
+        background: gray;
+        opacity: 0.125;
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: red;
+    }
+</style>
+{% endblock stylesheet %}
+
+{% block content %}
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="slide-content-container">
+                <h2>Services details</h2>
+                <p>Closing files is especially important when accessing file fields in a loop over a large number of objects.</p>
+            </div>
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">
+        <div class="slide-content-container">
+            <h2>Oncoming training</h2>
+            <p>If files are not manually closed after accessing them, the risk of running out of file descriptors.</p>
+        </div></div>
+        <div class="swiper-slide">Slide 4</div>
+        </div>  
+    <div class="swiper-pagination"></div>
+</div>
+{% endblock content %}
+    
+{% block script %}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        loop: true,
+        speed: 900,
+        /*
+        */
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+        },
+        spaceBetween: 8,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        
+        /* 
+        */
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        // when window width is >= 320px
+        breakpoints: {
+            320: {
+            slidesPerView: 1,
+            },
+            450: {
+                slidesPerView: 2,
+            },
+            // when window width is >= 480px
+            720: {
+            slidesPerView: 3,
+            },
+            // when window width is >= 640px
+            900: {
+            slidesPerView: 4,
+            }
+        }
+    });
+</script>
+{% endblock script %}

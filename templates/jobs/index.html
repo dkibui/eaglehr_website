@@ -10,7 +10,12 @@
       </a>
       <div class="date-author-tag">
         <div class="date-author">
-          <div>Posted <span class="date">{{ post.date_created | timesince }}</span> ago</div><div>Apply before <span class="date">{{ post.apply_by_date |date:"D d M Y" }}</span></div>
+          <div>
+            Posted <span class="date">{{ post.date_created | timesince }}</span> ago</div><div>Apply before 
+              <span class="date">{{ post.apply_by_date |date:"D d M Y" }}</span>
+              <div><span class="">{{ post.type }}</span></div>
+              <span class="">{{ post.location }}</span>
+            </div>
         </div>
       </div>
       <div class="blog-snippet">

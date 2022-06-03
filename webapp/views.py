@@ -5,6 +5,10 @@ from django.shortcuts import render
 current_time = datetime.datetime.now()
 
 
+def test(request):
+    return render(request, 'webapp/test.html')
+
+
 def index(request):
     context = {}
     try:

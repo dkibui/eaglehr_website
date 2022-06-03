@@ -20,9 +20,28 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 
+class JobType(models.Model):
+    type_of_job = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.type_of_job
+
+    class Meta:
+        verbose_name_plural = 'Job types'
+
+
+class Location(models.Model):
+    location = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.location
+
+
 # Create your models here.
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    type = models.ForeignKey(JobType, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     content = RichTextField()
     slug = models.SlugField(max_length=255, unique=True)
@@ -42,7 +61,6 @@ class Post(models.Model):
 
 
 class Application(models.Model):
-
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=55)

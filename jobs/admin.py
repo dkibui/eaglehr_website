@@ -34,10 +34,20 @@ class ApplicationAdmin(admin.ModelAdmin):
                        'email', 'phone', 'reference', 'date_applied', ]
 
 
+class JobTypeAdmin(admin.ModelAdmin):
+    list_display = ('type_of_job',)
+
+
+class LocationAdmin(admin.ModelAdmin):
+    list_display = ('location',)
+
+
 # Register your models here.
+admin.site.register(models.Post, PostAdmin)
 admin.site.register(models.Category)
 admin.site.register(models.Application, ApplicationAdmin)
-admin.site.register(models.Post, PostAdmin)
+admin.site.register(models.Location, LocationAdmin)
+admin.site.register(models.JobType, JobTypeAdmin)
 
 
 # Unregister modules
