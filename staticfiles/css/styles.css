@@ -401,11 +401,14 @@ h3 {
   font-weight: bold;
 }
 
+.news-events {
+  margin-top: var(--margin-top);
+}
+
 .news-events h2 {
   text-transform: uppercase;
   text-align: center;
   color: var(--primary);
-  margin-top: 2.75rem;
   margin-bottom: 22px;
 }
 
@@ -491,8 +494,7 @@ h3 {
 .breakout {
   width: 100%;
   min-height: 350px;
-  /* background: url("https://i.ibb.co/tBJGPD9/xbox.png") no-repeat center
-    center/cover; */
+  margin-top: var(--margin-top);
   margin-bottom: 20px;
   background-color: var(--primary);
 }
@@ -516,9 +518,12 @@ h3 {
 .carbon {
   width: 100%;
   min-height: 350px;
-  /* margin-top: var(--margin-top); */
-  margin-top: 8rem;
-  background: url("/static/images/carbon.jpg") no-repeat center left/cover;
+  margin-top: var(--margin-top);
+  background: url("/static/images/carbon.jpg") no-repeat center right/cover;
+}
+
+.carbon h2 {
+  color: var(--white);
 }
 
 .carbon .content {
@@ -550,16 +555,6 @@ h3 {
   font-size: 13px;
   color: gray;
   display: inline-block;
-}
-
-.job-list a,
-.job-list .post-apply-by,
-.job-list .location-job-type {
-  /* 
-  border-bottom: 1px solid var(--muted-primary2); 
-  padding-top: 3px;
-  padding-bottom: 4px;
-  */
 }
 
 .job-list a span {
@@ -1076,8 +1071,16 @@ select {
     border-top: none;
   }
 
+  .carbon {
+    margin-top: 6.9rem;
+  }
+
+  .news-events {
+    margin-top: var(--margin-top);
+    margin-bottom: 32px;
+  }
+
   .news-events h2 {
-    margin-top: 5.725rem;
     margin-bottom: 32px;
   }
 
