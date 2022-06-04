@@ -6,7 +6,7 @@ current_time = datetime.datetime.now()
 
 
 def test(request):
-    return render(request, 'webapp/test.html')
+    return render(request, 'webapp/jobs.html')
 
 
 def index(request):

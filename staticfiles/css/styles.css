@@ -525,6 +525,65 @@ h3 {
   padding: 50px 30px;
 }
 
+/* .......................................................... */
+.all-jobs {
+  margin-top: var(--margin-top) !important;
+  margin-bottom: var(--margin-top) !important;
+}
+
+.job-list {
+  /* border: 1px solid var(--muted-primary); 
+  border-radius: 5px;
+  background-color: #e3ebee31;
+  border-bottom: 1px solid var(--muted-primary);
+  */
+  margin-bottom: 3.2rem;
+}
+
+.job-list span {
+  font-size: 13px;
+  color: gray;
+  display: inline-block;
+}
+
+.job-list a,
+.job-list .post-apply-by,
+.job-list .location-job-type {
+  border-bottom: 1px solid var(--muted-primary2);
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+
+.job-list a span {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--secondary);
+  text-align: right;
+  margin-top: 6px;
+}
+
+.job-list a {
+  border: none;
+}
+
+.job-list h2 {
+  /* padding-top: 4px; */
+  padding-bottom: 5px;
+  border-bottom: 3px solid var(--muted-primary2);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.job-list .side-by-side {
+  display: flex;
+  column-gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* .......................................................... */
+
 .messages {
   background-color: var(--notification);
   color: var(--white);

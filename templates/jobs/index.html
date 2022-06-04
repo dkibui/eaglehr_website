@@ -1,27 +1,34 @@
 {% extends "sitewide/base.html" %}
+{% load static %} 
 {% block content %}
 
-<div class="blog-container">
+{% comment %} <div class="main-aside-wrapper width">
+</div> {% endcomment %}
+  <div class="all-jobs width">
   {% for post in page_obj %}
-  <article class="width blogs">
-    <div data-id="{{post.id}}" class="blog">
-      <a href="/jobs/{{post.slug}}">
-        <h2>{{ post.title | safe | title }}</h2>
-      </a>
-      <div class="date-author-tag">
-        <div class="date-author">
-          <div>
-            Posted <span class="date">{{ post.date_created | timesince }}</span> ago</div><div>Apply before 
-              <span class="date">{{ post.apply_by_date |date:"D d M Y" }}</span>
-              <div><span class="">{{ post.type }}</span></div>
-              <span class="">{{ post.location }}</span>
-            </div>
-        </div>
-      </div>
-      <div class="blog-snippet">
-      </div> 
-    </div>
-  </article>
-  {% endfor %}</div>
-
+    <section class="job-list">
+      <article class="job-article">
+          <h2>{{ post.title | safe | title }}</h2>
+          <div class="post-apply-by side-by-side">
+              <div><span>Posted <strong>{{ post.date_created | timesince }}</strong> ago</span></div>
+              <div><span>Application deadline, <strong>{{ post.apply_by_date |date:"d M Y" }}</strong></span></div>
+          </div>
+          <div class="location-job-type side-by-side">
+              <div><span>In {{ post.location }}</span></div>
+              <div><span>{{ post.type }}</span></div>
+          </div>
+          <div><a href="{{ post.slug }}"><span>See job details</span></a> or <a href="apply/{{ post.id }}"><span>Apply here</span></a></div>
+      </article>
+    </section>
+  {% endfor %}
+  </div>
+    {% comment %} <aside class="aside">
+    <h1>Amazing heading this one</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam excepturi
+      repudiandae labore adipisci quas ab, error sit quaerat ratione recusandae
+      numquam possimus debitis? Illo suscipit nam dolorem perferendis. Neque,
+      eius.
+    </p>
+  </aside> {% endcomment %}
 {% endblock content %}

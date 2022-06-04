@@ -1,0 +1,78 @@
+{% extends "sitewide/base.html" %} 
+{% load static %} 
+{% block stylesheet %}
+<style>
+    .job-list {
+        border: 1px solid #00000015;
+        border-radius: 5px;
+    }
+
+    .job-list a,
+    .job-list .post-apply-by,
+    .job-list .location-job-type {
+        border-bottom: 1px solid #00000015;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 2px;
+        padding-bottom: 3px;
+    }
+
+    .job-list a {
+        display: inline-block;
+        text-decoration: none;
+        border: none;
+        font-weight: bold;
+        padding: 4px 1rem 6px 1rem;
+    }
+
+    .job-list h2 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 4px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #00000015;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 17px;
+    }
+
+    .job-list .side-by-side {
+        display: flex;
+        gap: 2rem;
+        wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .job-list .side-by-side div:last-child {
+        text-align: right;
+    }
+
+    .job-list span {
+        font-size: 13px;
+        color: gray;
+    }
+</style>
+{% endblock stylesheet %}
+
+{% block content %}
+<div class="width">
+    <h1>Available jobs</h1>
+    <section class="job-list">
+        <article class="job-article">
+            <h2>Chief Executive Officer</h2>
+            <div class="post-apply-by side-by-side">
+                <div><span>Posted <strong>2 days 4 hours</strong> ago</span></div>
+                <div><span>Application deadline, <strong>Tue 14 July</strong></span></div>
+            </div>
+            <div class="location-job-type side-by-side">
+                <div><span>In Mombasa</span></div>
+                <div><span>Fulltime job</span></div>
+            </div>
+            <div><a href="#"><span>See more details</span></a></div>
+        </article>
+    </section>
+</div>
+{% endblock content %}
+{% block script %}
+<script></script>
+{% endblock script %}
