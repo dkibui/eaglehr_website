@@ -3,20 +3,23 @@
 {% block content %}
 
 <div class="all-jobs width">
-{% for post in page_obj %}
-  <section class="job-list">
-    <article class="job-article">
-        <h2>{{ post.title | safe | title }}</h2>
-        <div class="post-apply-by side-by-side">
-            <div><span>Posted <strong>{{ post.date_created | timesince }}</strong> ago</span></div>
-            <div><span>Application deadline, <strong>{{ post.apply_by_date |date:"d M Y" }}</strong></span></div>
-        </div>
-        <div class="location-job-type">
-            <div><span>{{ post.type }} job in {{ post.location }}</span></div>
-        </div>
-        <div><a href="{{ post.slug }}"><span>See job details</span></a> or <a href="apply/{{ post.id }}"><span>Apply here</span></a></div>
-    </article>
-  </section>
-{% endfor %}
+  <h1>Our available jobs</h1>
+  <div class="jobs-container">
+    {% for post in page_obj %}
+      <section class="job-list">
+        <article class="job-article">
+            <h2>{{ post.title | safe | title }}</h2>
+            <div class="post-apply-by side-by-side">
+                <div><span>Added <strong>{{ post.date_created | timesince }}</strong> ago</span></div>
+                <div><span>Application deadline, <strong>{{ post.apply_by_date |date:"d M Y" }}</strong></span></div>
+            </div>
+            <div class="location-job-type">
+                <div><span>{{ post.type }} job in {{ post.location }}</span></div>
+            </div>
+            <div><a href="{{ post.slug }}"><span>See job details</span></a> or <a href="apply/{{ post.id }}"><span>Apply here</span></a></div>
+        </article>
+      </section>
+    {% endfor %}
+  </div>
 </div>
 {% endblock content %}

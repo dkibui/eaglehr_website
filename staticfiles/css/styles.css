@@ -363,7 +363,7 @@ h3 {
   width: 100%;
   max-width: 1100px;
   min-height: 400px;
-  background: url("/static/images/RWO6HY.jpg") no-repeat center right/cover;
+  background: url("/static/images/RWO6HY.webp") no-repeat center right/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -444,13 +444,17 @@ h3 {
   row-gap: 2.2rem;
 }
 
-.main,
-.aside {
-  /* outline: 1px solid var(--muted-primary); */
-  border: 1px solid var(--muted-primary);
+/* .main {
+  outline: 1px solid var(--muted-primary);
   border-radius: 5px;
   padding: 1rem;
-}
+} */
+
+/* .aside {
+  outline: 1px solid var(--muted-primary);
+  border-radius: 5px;
+  padding: 1rem;
+} */
 
 .event-wrapper {
   border-top: 1px solid #003c4a1e;
@@ -580,12 +584,6 @@ h3 {
   font-size: 16px;
 }
 
-.job-list .side-by-side {
-  display: flex;
-  column-gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 /* .......................................................... */
 
 .messages {
@@ -749,8 +747,13 @@ select {
   background-color: var(--primary);
 }
 
-.contact-page {
+.contact-page,
+.jobs-container {
   margin-top: var(--margin-top);
+}
+
+.all-jobs h1 {
+  text-transform: uppercase;
 }
 
 .contact-page .contacts div {
@@ -1031,8 +1034,16 @@ select {
     margin: 5rem 0;
   }
 
+  .job-list .side-by-side {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   .main,
   .aside {
+    outline: 1px solid var(--muted-primary);
     padding: 2.2rem;
     border-radius: 5px;
     border-top-left-radius: 0;
@@ -1044,7 +1055,6 @@ select {
     position: sticky;
     top: 0;
     height: min-content;
-    /* height: fit-content; */
   }
 
   .post-aside-container .btn {
