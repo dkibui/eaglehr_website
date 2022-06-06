@@ -171,6 +171,21 @@ h3 {
   padding: 0;
 }
 
+.body-text a h3 {
+  color: var(--secondary);
+  opacity: 0.65;
+}
+
+.event-card a::after {
+  content: "";
+  background-color: var(--secondary);
+  display: block;
+  margin-top: 8px;
+  width: 60px;
+  height: 4px;
+  opacity: 0.65;
+}
+
 .body-text h3 {
   display: inline-block;
 }
@@ -206,15 +221,6 @@ h3 {
   color: rgba(57, 68, 114, 0.74);
   font-size: 13px;
   display: inline-block;
-}
-
-.event-card a::after {
-  content: "";
-  background-color: rgba(79, 168, 98, 0.351);
-  display: block;
-  margin-top: 8px;
-  width: 60px;
-  height: 4px;
 }
 
 /* ............................................................. */
@@ -577,13 +583,10 @@ h3 {
 }
 
 .job-list h2 {
-  /* 
-  padding-top: 4px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--muted-primary2); */
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 18px;
+  /* color: var(--secondary); */
 }
 
 /* .......................................................... */

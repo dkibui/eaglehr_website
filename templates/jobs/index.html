@@ -8,7 +8,7 @@
     {% for post in page_obj %}
       <section class="job-list">
         <article class="job-article">
-            <h2>{{ post.title | safe | title }}</h2>
+          <a href="{{ post.slug }}"><h2>{{ post.title | safe | title }}</h2></a>
             <div class="post-apply-by side-by-side">
                 <div><span>Added <strong>{{ post.date_created | timesince }}</strong> ago</span></div>
                 <div><span>Application deadline, <strong>{{ post.apply_by_date |date:"d M Y" }}</strong></span></div>
