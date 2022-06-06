@@ -363,7 +363,7 @@ h3 {
   width: 100%;
   max-width: 1100px;
   min-height: 400px;
-  background: url("/static/images/RWO6HY.webp") no-repeat center right/cover;
+  background: url("/static/images/RWO6HY.webp") no-repeat center center/cover;
   background-color: var(--primary);
   display: flex;
   flex-direction: column;
@@ -528,7 +528,7 @@ h3 {
   width: 100%;
   min-height: 350px;
   margin-top: var(--margin-top);
-  background: url("/static/images/carbon.jpg") no-repeat center right/cover;
+  background: url("/static/images/carbon.webp") no-repeat center right/cover;
 }
 
 .carbon h2 {
