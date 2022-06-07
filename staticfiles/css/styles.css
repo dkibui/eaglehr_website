@@ -357,21 +357,26 @@ h3 {
   width: 100%;
   max-width: 1100px;
   min-height: 400px;
-  background: url("/static/images/RWO6HY.webp") no-repeat center center/cover;
+  background: url("/static/images/RWO6HY.jpg") no-repeat center center/cover;
   background-color: var(--primary);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
+}
+
+.header h1 {
+  margin-bottom: 15px;
+  margin-top: 0;
 }
 
 .header p {
   font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .header h1,
 .header p {
-  margin-bottom: 20px;
   color: var(--white);
 }
 
@@ -1029,7 +1034,11 @@ select {
   }
 
   .header h1 {
-    max-width: 640px;
+    max-width: 520px;
+  }
+
+  .header p {
+    max-width: 450px;
   }
 
   .blog-container {

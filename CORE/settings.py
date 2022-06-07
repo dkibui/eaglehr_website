@@ -23,6 +23,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', env('ALLOWED_HOST')]
 
 
 INSTALLED_APPS = [
+    'blogs.apps.BlogsConfig',
+    'news.apps.NewsConfig',
     'jobs.apps.JobsConfig',
     'User.apps.UserConfig',
     'webapp.apps.WebappConfig',
