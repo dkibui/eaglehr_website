@@ -1,8 +1,8 @@
 :root {
-  --primary: #003c4a0a;
   --primary: #003d4a;
+  /* --primary: hsl(191, 100%, 15%); */
   --muted-primary: #c6d3d7;
-  --muted-primary2: #e3ebee;
+  --muted-primary2: hsla(191, 100%, 15%, 0.0575);
   --danger: #e41818;
   --success: #27ce63;
   --notification: #678d8e;
@@ -146,44 +146,36 @@ h3 {
   padding: 2rem;
 }
 
+.event-card-content {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.425em;
+}
+
 .event-card .date {
-  font-size: 3.2em;
-  font-family: monospace;
-  font-weight: bolder;
-  color: var(--fourth);
-  padding: 0;
-}
-
-.event-card .month,
-.event-card .year {
-  display: block;
   font-size: 1.725em;
-  font-weight: light;
-  color: var(--fourth);
+  font-weight: 700;
 }
 
-.event-card .year {
-  padding-bottom: 12px;
-}
-
-.event-card * {
+.event-card *,
+.event-card-content * {
   margin: 0;
   padding: 0;
 }
 
 .body-text a h3 {
-  color: var(--third);
-  opacity: 0.825;
+  color: var(--primary);
+  opacity: 0.9125;
 }
 
 .event-card a::after {
   content: "";
-  background-color: var(--third);
+  background-color: var(--primary);
   display: block;
   margin-top: 8px;
   width: 60px;
   height: 4px;
-  opacity: 0.825;
+  opacity: 0.9125;
 }
 
 .body-text h3 {
@@ -365,12 +357,13 @@ h3 {
   width: 100%;
   max-width: 1100px;
   min-height: 400px;
-  background: url("/static/images/RWO6HY.jpg") no-repeat center center/cover;
+  background: url("/static/images/RWO6HY.webp") no-repeat center center/cover;
+  background-position-x: 68%;
   background-color: var(--primary);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
 }
 
 .header p {
