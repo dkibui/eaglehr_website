@@ -14,7 +14,7 @@ class Blogs(models.Model):
     author = models.ForeignKey(User, default=0,
                                on_delete=models.CASCADE)
     active = models.BooleanField(
-        default=False, help_text='Select to publish this news article. De-select to hide this job.')
+        default=False, help_text='Select to publish this blog article. De-select to hide this blog article from displayed articles.')
 
     class Meta:
         ordering = ['-date_created', 'author']

@@ -16,7 +16,7 @@ class Event(models.Model):
     cost = models.FloatField(default=10000, blank=True, null=True)
     location = models.CharField(max_length=255)
     is_active = models.BooleanField(
-        default=False, help_text='Display this event on upcoming events section on homepage. Only the first 4 are displayed.')
+        default=False, help_text='Activate to display this event on homepage on the upcoming events section. Only 3 nearest are displayed.')
 
     def __str__(self) -> str:
         return self.name
@@ -26,7 +26,7 @@ class BannerMessage(models.Model):
     name = models.CharField(max_length=255)
     message = RichTextField()
     is_active = models.BooleanField(
-        default=False, help_text='Display an important message at the very top of the webpage')
+        default=False, help_text='Activate to display this message at the top of the home page')
 
     def __str__(self) -> str:
         return self.name

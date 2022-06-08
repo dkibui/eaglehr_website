@@ -16,7 +16,7 @@ class News(models.Model):
     author = models.ForeignKey(User, default=0,
                                on_delete=models.CASCADE)
     active = models.BooleanField(
-        default=False, help_text='Select to publish this news article. De-select to hide this job.')
+        default=False, help_text='Select to publish this news article. De-select to hide this news article from available news articles.')
 
     class Meta:
         ordering = ['-date_created', 'author']
