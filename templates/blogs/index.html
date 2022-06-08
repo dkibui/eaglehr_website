@@ -5,7 +5,7 @@
 <div class="all-jobs width">
   <h1>Our available jobs</h1>
   <div class="jobs-container">
-    {% for post in posts %}
+    {% for post in object_list %}
       <section class="job-list">
         <article class="job-article">
           <a href="{{ post.slug }}"><h2>{{ post.title | safe | title }}</h2></a>

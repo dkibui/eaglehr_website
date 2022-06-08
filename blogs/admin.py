@@ -12,6 +12,11 @@ def deactivate_blogs(modeladmin, request, queryset):
     queryset.update(active=0)
 
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ['name', ]
+
+
 class BlogsAdmin(admin.ModelAdmin):
     def date_posted(self, obj):
         return obj.date_created.date()
@@ -25,3 +30,4 @@ class BlogsAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(models.Blogs, BlogsAdmin)
+admin.site.register(models.Category, CategoryAdmin)

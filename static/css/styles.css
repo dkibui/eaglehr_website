@@ -9,7 +9,7 @@
   --secondary: #db8c00;
   --third: #11966e;
   --fourth: #127399;
-  --five: #ffdea5;
+  --five: #f5e2c4;
   --white: #fff;
   --links: #262626;
   --margin-top: 4rem;
@@ -85,21 +85,18 @@ body {
 }
 
 .banner-message {
-  padding: 7px 0 7px 0;
-  background-color: var(--secondary);
+  padding: 6px 0 6px 0;
+  background-color: var(--five);
 }
 
 .banner-message a {
-  font-weight: bold;
-  color: #003d4a;
-  font-style: italic;
+  color: var(--fourth);
+  color: blue;
 }
 
 .banner-message p {
   font-size: 12px;
-  color: var(--primary);
-  color: black;
-  color: white;
+  color: rgb(57, 62, 80);
   line-height: 1.45;
   margin: 0;
 }
@@ -357,7 +354,8 @@ h3 {
   width: 100%;
   max-width: 1100px;
   min-height: 400px;
-  background: url("/static/images/RWO6HY.webp") no-repeat center center/cover;
+  background: url("/static/images/RWO6HY.webp") no-repeat center left/cover;
+  background-position-x: 36%;
   background-color: var(--primary);
   display: flex;
   flex-direction: column;
@@ -620,6 +618,10 @@ h3 {
 
 .follow i {
   color: var(--primary);
+}
+
+.follow p {
+  margin-right: 14px;
 }
 
 .follow * {

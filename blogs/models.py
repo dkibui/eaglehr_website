@@ -5,7 +5,19 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+        verbose_name_plural = 'Categories'
+
+
 class Blogs(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     content = RichTextField()
     slug = models.SlugField(max_length=255, unique=True)
