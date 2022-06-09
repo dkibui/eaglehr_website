@@ -86,7 +86,6 @@ body {
 
 .banner-message {
   padding: 6px 0 6px 0;
-  background-color: var(--five);
 }
 
 .banner-message a {
@@ -96,7 +95,7 @@ body {
 
 .banner-message p {
   font-size: 12px;
-  color: rgb(57, 62, 80);
+  color: rgb(40, 42, 48);
   line-height: 1.45;
   margin: 0;
 }
@@ -537,6 +536,50 @@ h3 {
   max-width: 820px;
 }
 
+.all-blogs {
+  margin-top: var(--margin-top) !important;
+  margin-bottom: var(--margin-top) !important;
+}
+
+.blogs-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: var(--margin-top);
+  gap: 1.5rem;
+}
+
+.blog-article {
+  padding: 1.2rem;
+  border: 1px solid var(--muted-primary);
+}
+
+.blog-article span {
+  font-size: 12px;
+  color: gray;
+}
+
+.blog-date {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.blog-article .blog-category span::before {
+  content: "";
+  background-color: var(--fourth);
+  display: block;
+  margin-top: 3px;
+  width: 100%;
+  height: 7px;
+  opacity: 0.25;
+}
+
+.blog-article h2 {
+  font-size: 15px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
 /* .......................................................... */
 .all-jobs {
   margin-top: var(--margin-top) !important;
@@ -544,11 +587,6 @@ h3 {
 }
 
 .job-list {
-  /* 
-  border-radius: 5px;
-  background-color: #e3ebee31;
-  border-top: 3px solid var(--muted-primary2);
-  */
   border-bottom: 2px solid var(--muted-primary2);
   padding-bottom: 20px;
   margin-bottom: 16px;
@@ -581,7 +619,6 @@ h3 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
-  /* color: var(--secondary); */
 }
 
 /* .......................................................... */
@@ -851,50 +888,6 @@ select {
   color: var(--muted-primary);
 }
 
-.blog {
-  border-top: 1px solid var(--muted-primary);
-  padding-top: 16px;
-  margin-bottom: 10px;
-}
-
-.blog-container {
-  margin: 3.2rem 0;
-}
-
-.blog div:first-of-type {
-  border-top: none;
-}
-
-.blog h2 {
-  color: var(--fourth);
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.blog-detail-date {
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 600;
-  opacity: 0.75;
-}
-
-.blog .date,
-.blog .author {
-  font-size: 14px;
-}
-
-.date-author {
-  color: gray;
-}
-
-.blog .date {
-  font-weight: bold;
-}
-
-/* .post-aside-container {
-  margin-bottom: 3.2rem;
-} */
-
 .main hr {
   border: 0;
   border-top: 1px solid var(--muted-primary);
@@ -916,6 +909,11 @@ select {
   .home-cards,
   .events {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blogs-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
   }
 }
 
@@ -1116,5 +1114,11 @@ select {
     grid-template-columns: 1fr 1fr;
     column-gap: 3.6rem;
     margin-top: 0;
+  }
+
+  .blogs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
   }
 }

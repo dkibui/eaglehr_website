@@ -1,0 +1,27 @@
+{% extends "sitewide/base.html" %}  
+{% block content %}
+<section class="width big-margin-top">
+  <h1>Get to know the news coming from EagleHr.</h1>
+  <p>
+      Please visit often to learn more about HR. We are always posting new articles.
+  </p>
+</section>
+<div class="post-container">
+  <article class="width main-aside-wrapper">
+    <div data-id="{{object.id}}" class="main">
+      <h1>{{object.title | safe | title }}</h1>
+      <div class="object-detail-date">Posted on <span>{{ object.date_created | date:"F d, Y" }}</span></div>
+      <div class="margin-top body-text">
+        <div class="body-p">{{ object.content | safe }}</div>
+      </div>
+    </div>
+    <div class="aside">
+      <div>
+        <p>Currently reading <em>{{object.title | safe | title }}</em></p>
+        <p>See more recent posts</p>
+      </div>
+    </div>
+  </article>
+</div>
+{% endblock content %}
+

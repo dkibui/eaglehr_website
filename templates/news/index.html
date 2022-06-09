@@ -2,23 +2,24 @@
 {% load static %} 
 {% block content %}
 
-<div class="all-jobs width">
-  <h1>Our available jobs</h1>
-  <div class="jobs-container">
-    {% for post in page_obj %}
-      <section class="job-list">
-        <article class="job-article">
+<div class="all-blogs width">
+  <h1>Available Blogs</h1>
+  <p>
+    One of the best ways that HR professionals can stay on top of emerging trends, keep up with best practices, and embrace digitization is by reading well-researched content published by leading HR professionals. We are sharing these trends and best practices.
+  </p>
+  <div class="blogs-container">
+    {% for post in object_list %}
+        <article class="blog-article">
+          <div class="blog-category">
+            <span class="blog-category">Added by {{ post.author.first_name }} {{ post.author.last_name }}</span>
+          </div>
           <a href="{{ post.slug }}"><h2>{{ post.title | safe | title }}</h2></a>
-            <div class="post-apply-by side-by-side">
-                <div><span>Added <strong>{{ post.date_created | timesince }}</strong> ago</span></div>
-                <div><span>Application deadline, <strong>{{ post.apply_by_date |date:"d M Y" }}</strong></span></div>
-            </div>
-            <div class="location-job-type">
-                <div><span>{{ post.type }} job in {{ post.location }}</span></div>
-            </div>
-            <div><a href="{{ post.slug }}"><span>See job details</span></a> or <a href="apply/{{ post.id }}"><span>Apply here</span></a></div>
+          <div class="blog-added-date">
+              <div>
+                <span class="blog-date">Added <strong>{{ post.date_created | timesince }}</strong> ago</span>
+              </div>
+          </div>
         </article>
-      </section>
     {% endfor %}
   </div>
 </div>
