@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="all-blogs width">
-  <h1>Available Blogs</h1>
+  <h1>EagleHr has news to share.</h1>
   <p>
     One of the best ways that HR professionals can stay on top of emerging trends, keep up with best practices, and embrace digitization is by reading well-researched content published by leading HR professionals. We are sharing these trends and best practices.
   </p>
@@ -14,7 +14,7 @@
             <span class="blog-category">Added by {{ post.author.first_name }} {{ post.author.last_name }}</span>
           </div>
           <a href="{{ post.slug }}"><h2>{{ post.title | safe | title }}</h2></a>
-          <div><span>{{ post.content | safe | truncatechars:160 }}</span></div>
+          <div class="blog-content"><span>{{ post.content | safe | truncatechars:160 }}</span></div>
           <div class="blog-added-date">
               <div>
                 <span class="blog-date">Added <strong>{{ post.date_created | timesince }}</strong> ago</span>

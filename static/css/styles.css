@@ -567,6 +567,12 @@ h3 {
 
 .blog-content {
   margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.blog-content span {
+  font-size: 14px;
+  line-height: 1.375;
 }
 
 .blog-article .blog-category span::before {
@@ -574,7 +580,7 @@ h3 {
   background-color: var(--muted-primary);
   display: block;
   margin-top: 3px;
-  width: 51%;
+  width: 50%;
   height: 4px;
 }
 
@@ -583,6 +589,11 @@ h3 {
   margin: 0;
   margin-top: 15px;
   margin-bottom: 8px;
+}
+
+.blog-article p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* .......................................................... */

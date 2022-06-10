@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="all-blogs width">
-  <h1>Available Blogs</h1>
+  <h1>We share important HR trends and best practices here on on our blog.</h1>
   <p>
     One of the best ways that HR professionals can stay on top of emerging trends, keep up with best practices, and embrace digitization is by reading well-researched content published by leading HR professionals. We are sharing these trends and best practices.
   </p>
@@ -12,7 +12,7 @@
         <article class="blog-article">
           <div class="blog-category"><span class="blog-category">{{ post.category }}</span></div>
           <a href="{{ post.slug }}"><h2>{{ post.title | safe | title }}</h2></a>
-          <div class="blog-content"><span>{{ post.content | safe | truncatechars:160 | striptags }}</span></div>
+          <div class="blog-content"><span>{{ post.content | safe | truncatechars:160 | slice:"-4" | striptags }}</span></div>
           <div class="blog-added-date">
               <div>
                 <span class="blog-date">Added <strong>{{ post.date_created | timesince }}</strong> ago</span>
