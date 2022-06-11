@@ -133,12 +133,12 @@ h3 {
 /* ............................................................. */
 
 .event-card {
-  background-color: var(--muted-primary2);
+  background-color: var(--third);
   display: flex;
   align-items: center;
   gap: 2.2rem;
-  color: rgb(70, 84, 139);
-  color: var(--fourth);
+  color: var(--white);
+  color: rgba(0, 0, 0, 0.75);
   padding: 2rem;
 }
 
@@ -160,18 +160,17 @@ h3 {
 }
 
 .body-text a h3 {
-  color: var(--primary);
-  opacity: 0.9125;
+  color: var(--muted-primary);
 }
 
 .event-card a::after {
   content: "";
-  background-color: var(--primary);
+  background-color: var(--muted-primary);
   display: block;
   margin-top: 8px;
   width: 60px;
   height: 4px;
-  opacity: 0.9125;
+  opacity: 0.8125;
 }
 
 .body-text h3 {
@@ -183,7 +182,7 @@ h3 {
   font-weight: 700;
   padding-bottom: 5px;
   display: inline-block;
-  border-bottom: 4px solid rgba(79, 135, 168, 0.251);
+  border-bottom: 4px solid var(--muted-primary);
 }
 
 .body-text .duration {
