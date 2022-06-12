@@ -134,7 +134,6 @@ h3 {
 
 .event-card {
   display: flex;
-  align-items: center;
   gap: 2.2rem;
   background-color: var(--fourth);
   background-color: #dfe0e2;
@@ -144,12 +143,11 @@ h3 {
 .event-card-content {
   display: flex;
   flex-direction: column;
-  font-size: 1.425em;
+  font-size: 1.125em;
 }
 
 .event-card .date {
-  font-size: 1.725em;
-  font-weight: 700;
+  font-size: 1.075em;
 }
 
 .event-card *,
@@ -167,7 +165,7 @@ h3 {
   background-color: var(--fourth);
   display: block;
   margin-top: 8px;
-  width: 60px;
+  width: 75px;
   height: 4px;
   opacity: 0.5;
 }
@@ -180,12 +178,17 @@ h3 {
   font-size: 12px;
   font-weight: 700;
   padding-bottom: 5px;
-  display: inline-block;
+  opacity: 0.975;
 }
 
-.events .body-text p {
-  border-bottom: 4px solid var(--dark);
-  opacity: 0.75;
+.events .body-text p::after {
+  content: "";
+  background-color: var(--dark);
+  display: block;
+  margin-top: 8px;
+  width: 100%;
+  height: 1px;
+  opacity: 0.3125;
 }
 
 .body-text .duration {
@@ -198,12 +201,9 @@ h3 {
   line-height: 1.2;
 }
 
-.body-text .location {
-  margin-bottom: 6px;
-}
-
 .body-text .location p {
-  padding-bottom: 5px;
+  margin-bottom: 8px;
+  padding-bottom: 0;
 }
 
 .event-card a {
