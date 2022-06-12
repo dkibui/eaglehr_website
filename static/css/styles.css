@@ -1,8 +1,8 @@
 :root {
   --primary: #003d4a;
-  /* --primary: hsl(191, 100%, 15%); */
   --muted-primary: #c6d3d7;
-  --muted-primary2: hsla(191, 100%, 15%, 0.0575);
+  --muted-primary2: #003e4d0f;
+  --dark: #1e2329;
   --danger: #e41818;
   --success: #27ce63;
   --notification: #678d8e;
@@ -85,17 +85,17 @@ body {
 }
 
 .banner-message {
-  padding: 6px 0 6px 0;
+  background-color: #1e2329;
+  padding: 8px 0 8px 0;
 }
 
 .banner-message a {
-  color: var(--fourth);
-  color: blue;
+  color: var(--secondary);
 }
 
 .banner-message p {
   font-size: 12px;
-  color: rgb(40, 42, 48);
+  color: var(--muted-primary);
   line-height: 1.45;
   margin: 0;
 }
@@ -133,12 +133,11 @@ h3 {
 /* ............................................................. */
 
 .event-card {
-  background-color: var(--third);
   display: flex;
   align-items: center;
   gap: 2.2rem;
-  color: var(--white);
-  color: rgba(0, 0, 0, 0.75);
+  background-color: var(--fourth);
+  background-color: #dfe0e2;
   padding: 2rem;
 }
 
@@ -160,17 +159,17 @@ h3 {
 }
 
 .body-text a h3 {
-  color: var(--muted-primary);
+  color: var(--fourth);
 }
 
 .event-card a::after {
   content: "";
-  background-color: var(--muted-primary);
+  background-color: var(--fourth);
   display: block;
   margin-top: 8px;
   width: 60px;
   height: 4px;
-  opacity: 0.8125;
+  opacity: 0.5;
 }
 
 .body-text h3 {
@@ -182,7 +181,11 @@ h3 {
   font-weight: 700;
   padding-bottom: 5px;
   display: inline-block;
-  border-bottom: 4px solid var(--muted-primary);
+}
+
+.events .body-text p {
+  border-bottom: 4px solid var(--dark);
+  opacity: 0.75;
 }
 
 .body-text .duration {
@@ -965,11 +968,12 @@ select {
   }
 
   .banner-message {
-    padding: 12px 0 12px 0;
+    padding: 14px 0 14px 0;
   }
 
   .banner-message p {
     font-size: 14px;
+    color: var(--muted-primary);
   }
 
   .main-nav ul {
