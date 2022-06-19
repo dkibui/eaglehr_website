@@ -357,7 +357,7 @@ h3 {
   max-width: 1100px;
   min-height: 400px;
   background: url("/static/images/RWO6HY.webp") no-repeat center left/cover;
-  background-position-x: 36%;
+  background-position-x: 20%;
   background-color: var(--primary);
   display: flex;
   flex-direction: column;
@@ -407,16 +407,16 @@ h3 {
 
 .news-events h2 {
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   color: var(--primary);
   margin-bottom: 42px;
 }
 
 .our-clients h2 {
-  margin-bottom: 30px;
+  margin-bottom: 36px;
   margin-top: 0;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   color: var(--primary);
 }
 
@@ -940,6 +940,11 @@ select {
   .blogs-container {
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
+  }
+
+  .news-events h2,
+  .our-clients h2 {
+    text-align: center;
   }
 }
 
