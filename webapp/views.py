@@ -1,4 +1,4 @@
-from .models import Event, BannerMessage
+from .models import Event, BannerMessage, Event
 import datetime
 from django.shortcuts import render
 
@@ -71,3 +71,21 @@ def african_talent(request):
         'title': 'African talent page',
     }
     return render(request, 'webapp/african-talent.html', context)
+
+
+def event(request, id):
+    context = {
+        'title': 'Eaglehr upcoming events',
+    }
+
+    try:
+        events = list(Event.objects.all().filter(is_active=1))
+
+        target_event = filter(lambda event: event.id == id, events)
+    except:
+        banner_message = 'Unable to fetch message'
+
+    context['target_event'] = target_event
+    context['events'] = events
+
+    return render(request, 'webapp/event.html', context)

@@ -14,4 +14,5 @@ urlpatterns = [
     path('outsourcing/', views.outsourcing, name='outsourcing'),
     path('recruitment/', views.recruitment, name='recruitment'),
     path('african-talent/', views.african_talent, name='african-talent'),
+    path('events/<int:id>/', views.event, name='event'),
 ]
