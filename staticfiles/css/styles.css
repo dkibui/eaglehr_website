@@ -477,7 +477,8 @@ h3 {
 }
 
 .home-cards img {
-  width: 100%;
+  display: block;
+  max-width: 64px;
   margin-bottom: 20px;
 }
 
