@@ -409,7 +409,7 @@ h3 {
   text-transform: uppercase;
   text-align: center;
   color: var(--primary);
-  margin-bottom: 22px;
+  margin-bottom: 42px;
 }
 
 .our-clients h2 {
@@ -1134,7 +1134,7 @@ select {
   }
 
   .news-events h2 {
-    margin-bottom: 32px;
+    margin-bottom: 52px;
   }
 
   .footer-flex-items {
