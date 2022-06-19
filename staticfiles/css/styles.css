@@ -425,6 +425,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 25px;
+  row-gap: 48px;
 }
 
 .home-cards {
@@ -492,6 +493,7 @@ h3 {
 
 .home-cards p {
   margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .home-cards a,
