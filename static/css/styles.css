@@ -478,8 +478,12 @@ h3 {
 
 .home-cards img {
   display: block;
-  max-width: 64px;
+  max-width: 100%;
   margin-bottom: 20px;
+}
+
+.home-cards .service-image {
+  max-width: 64px;
 }
 
 .home-cards h3 {
