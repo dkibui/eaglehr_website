@@ -207,6 +207,10 @@ h3 {
   margin-top: var(--margin-top);
 }
 
+.map-container div {
+  background-color: var(--muted-primary);
+}
+
 .event-card a {
   text-decoration: none;
   color: rgba(57, 68, 114, 0.74);
