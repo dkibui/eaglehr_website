@@ -61,13 +61,14 @@ class Post(models.Model):
 
 
 class Application(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=55)
     phone = models.CharField(max_length=13, )
     cover_letter = models.FileField(
-        upload_to='applications/uploads/')
-    resume = models.FileField(upload_to='applications/uploads/')
+        upload_to='uploads/applications/')
+    resume = models.FileField(upload_to=f'uploads/applications/{post}')
     reference = models.CharField(
         max_length=255,
         choices=WAYS_TO_FIND_US,
