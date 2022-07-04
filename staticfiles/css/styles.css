@@ -713,7 +713,7 @@ h3 {
 }
 
 .input-label-wrapper {
-  margin: 25px 0;
+  margin: 36px 0;
 }
 
 .form-group label {
@@ -1059,10 +1059,14 @@ select {
     width: 90%;
     max-width: 720px;
     margin: 5rem auto 3.2rem auto;
-    border: 1px solid var(--muted-primary);
+    /* border: 1px solid var(--muted-primary);
     padding: 10px 0;
-    border-radius: 5px;
+    border-radius: 5px; */
   }
+
+  .input-label-wrapper {
+    margin: 54px 0;
+}
 
   .header {
     align-items: left;
