@@ -1,6 +1,13 @@
+from datetime import date, datetime, timedelta
 from django.db import models
-
 from ckeditor.fields import RichTextField
+
+# 2022-07-11 # .filter(start_date__gt=current_time)
+
+
+class ActiveEventManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_active=1)
 
 
 class Event(models.Model):
@@ -14,6 +21,9 @@ class Event(models.Model):
     is_active = models.BooleanField(
         default=False, help_text='Activate to display this event on homepage on the upcoming events section. Only 3 '
                                  'nearest are displayed.')
+
+    objects = models.Manager()  # The default manager.
+    active_event = ActiveEventManager()  # Our custom manager.
 
     def __str__(self) -> str:
         return self.name

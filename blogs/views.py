@@ -12,21 +12,24 @@ def index(request):
 
     context["count"] = len(list(posts))
     context["object_list"] = posts
-
     return render(request, 'blogs/index.html', context)
 
 
 def blog_detail(request, slug):
     context = {}
-    try:
-        blog = Blogs.objects.get(slug=slug)
-        context['object'] = blog
-    except:
-        messages.error(
-            request, f'This blog post is not available')
-        return redirect('blogs:index')
-    if blog.active != 1:
-        messages.error(
-            request, f'blog is currently not available')
-        return redirect('blogs:index')
-    return render(request, 'blogs/blog-detail.html', context)
+    blogs = Blogs.active_blog.all()
+
+    if blogs.count:
+        context['blogs'] = blogs
+        try:
+            blog = Blogs.objects.get(slug=slug)
+            others = blogs.exclude(slug=slug)
+            context['object'] = blog
+            context['others'] = others
+        except:
+            messages.error(
+                request, f'{request.path} does not exist')
+            return redirect('blogs:index')
+        return render(request, 'blogs/blog-detail.html', context)
+    else:
+        return redirect('webapp:index')

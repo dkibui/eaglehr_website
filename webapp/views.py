@@ -1,6 +1,7 @@
 from .models import Event, BannerMessage, Event
+from django.contrib import messages
 import datetime
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 current_time = datetime.datetime.now()
 
@@ -77,15 +78,15 @@ def event(request, id):
     context = {
         'title': 'Eaglehr upcoming events',
     }
-
+    events = Event.active_event.all()
     try:
-        events = list(Event.objects.all().filter(is_active=1))
-
-        target_event = filter(lambda event: event.id == id, events)
+        other_events = events.exclude(id=id)[:8]
+        target_event = events.filter(id=id)
+        context['other_events'] = other_events
+        context['target_event'] = target_event
     except:
-        banner_message = 'Unable to fetch message'
-
-    context['target_event'] = target_event
-    context['events'] = events
+        messages.error(
+            request, f'This event is not available')
+        return redirect('webapp:index')
 
     return render(request, 'webapp/event.html', context)

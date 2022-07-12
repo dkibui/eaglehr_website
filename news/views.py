@@ -18,11 +18,14 @@ def index(request):
 def news_detail(request, slug):
     context = {}
     try:
-        news = News.objects.get(slug=slug)
+        news = News.objects.all().filter(active=1)
+        others = news.exclude(slug=slug)
+        news = news.get(slug=slug)
         context['object'] = news
+        context['others'] = others
     except:
         messages.error(
-            request, f'This news post is not available')
+            request, f'Your requested news post is not available')
         return redirect('news:index')
     if news.active != 1:
         messages.error(

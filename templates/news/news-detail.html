@@ -18,7 +18,10 @@
     <div class="aside">
       <div>
         <p>Currently reading <em>{{object.title | safe | title }}</em></p>
-        <p>See more recent posts</p>
+        <h2>More Recent Blogs</h2>
+        {% for item in others %}
+            <a href="/news/{{ item.slug }}"><p>{{item.title}}</p></a>
+        {% endfor %}
       </div>
     </div>
   </article>

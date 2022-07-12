@@ -16,98 +16,24 @@
 <div class="main-aside-wrapper width">
   <main class="main">
     <section class="services">
-      <h2>Providing you excellent services for your business.</h2>
-      <p>
-        People are at the heart of every successful organization. Investing in
-        human capital is one of the smartest moves a business leader can make.
-        But without the right systems to manage and measure your performance,
-        this investment will never truly deliver. The complexities of managing
-        your human capital are made all the more complex as your organization
-        grows and conducts business across borders.
-      </p>
-      <p>
-        Eagle HR Consultants works with its clients to craft the most
-        appropriate HR and Payroll solution, which will integrate with their
-        current and future technology needs as the company grows. Eagle HR
-        Consultants offers HR Consulting and Payroll solutions and interventions
-        which can significantly add to the efficacy and performance of any
-        organization across the globe in all sectors.
-      </p>
-      <h2 id="talent">Top Talent Sourcing</h2>
-      <p>
-        People are at the heart of every successful organization. Investing in
-        human capital is one of the smartest moves a business leader can make.
-        But without the right systems to manage and measure your performance,
-        this investment will never truly deliver. The complexities of managing
-        your human capital are made all the more complex as your organization
-        grows and conducts business across borders.
-      </p>
-      <p>
-        Eagle HR Consultants works with its clients to craft the most
-        appropriate HR and Payroll solution, which will integrate with their
-        current and future technology needs as the company grows. Eagle HR
-        Consultants offers HR Consulting and Payroll solutions and interventions
-        which can significantly add to the efficacy and performance of any
-        organization across the globe in all sectors.
-      </p>
-      <h2 id="acquisition">Acquisition & Retention</h2>
-      <p>
-        People are at the heart of every successful organization. Investing in
-        human capital is one of the smartest moves a business leader can make.
-        But without the right systems to manage and measure your performance,
-        this investment will never truly deliver. The complexities of managing
-        your human capital are made all the more complex as your organization
-        grows and conducts business across borders.
-      </p>
-      <p>
-        Eagle HR Consultants works with its clients to craft the most
-        appropriate HR and Payroll solution, which will integrate with their
-        current and future technology needs as the company grows. Eagle HR
-        Consultants offers HR Consulting and Payroll solutions and interventions
-        which can significantly add to the efficacy and performance of any
-        organization across the globe in all sectors.
-      </p>
-      <h2 id="interviews">Interviews On Your Behalf</h2>
-      <p>
-        People are at the heart of every successful organization. Investing in
-        human capital is one of the smartest moves a business leader can make.
-        But without the right systems to manage and measure your performance,
-        this investment will never truly deliver. The complexities of managing
-        your human capital are made all the more complex as your organization
-        grows and conducts business across borders.
-      </p>
-      <p>
-        Eagle HR Consultants works with its clients to craft the most
-        appropriate HR and Payroll solution, which will integrate with their
-        current and future technology needs as the company grows. Eagle HR
-        Consultants offers HR Consulting and Payroll solutions and interventions
-        which can significantly add to the efficacy and performance of any
-        organization across the globe in all sectors.
-      </p>
-      <h2 id="your-talent">We take Care of Your Talent</h2>
-      <p>
-        People are at the heart of every successful organization. Investing in
-        human capital is one of the smartest moves a business leader can make.
-        But without the right systems to manage and measure your performance,
-        this investment will never truly deliver. The complexities of managing
-        your human capital are made all the more complex as your organization
-        grows and conducts business across borders.
-      </p>
-      <p>
-        Eagle HR Consultants works with its clients to craft the most
-        appropriate HR and Payroll solution, which will integrate with their
-        current and future technology needs as the company grows. Eagle HR
-        Consultants offers HR Consulting and Payroll solutions and interventions
-        which can significantly add to the efficacy and performance of any
-        organization across the globe in all sectors.
-      </p>
+      {% if target_event %}
+      {% for event in target_event %}
+        <h2>{{ event.name }}</h2>
+        <div class="service-span">
+          <span><strong>Course duration</strong> {{ event.duration }} day{{event.duration|pluralize }}.</span> <span><strong>{{ event.location }}</strong>.</span> <span>Cost Ksh <strong>{{ event.cost|floatformat:2 }}</strong></span>
+        </div>
+        <p>{{ event.description | safe}}</p>
+      {% endfor %}
+      {% else %}
+        <h2>No event matching your request found</h2>
+      {% endif %}
     </section>
   </main>
 
   <aside class="aside">
-    <h1>Other Upcoming Training</h1>
-    {% for event in events %}
-        <a href="{% url 'webapp:event' %} {{ event.id }}"><p>{{event.name}}</p></a>
+    <h2>More of Our Upcoming Trainings</h2>
+    {% for event in other_events %}
+        <a href="/events/{{ event.id }}"><p>{{event.name}}</p></a>
     {% endfor %}
   </aside>
 </div>

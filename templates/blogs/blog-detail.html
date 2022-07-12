@@ -15,12 +15,14 @@
         <div class="body-p">{{ object.content | safe }}</div>
       </div>
     </div>
-    <div class="aside">
-      <div>
-        <p>Currently reading <em>{{object.title | safe | title }}</em></p>
-        <p>See more recent posts</p>
-      </div>
-    </div>
+    <aside class="aside">
+      <p>Currently reading <em>{{object.title | safe | title }}</em></p>
+      <h2>More Recent Blogs</h2>
+      {% for item in others %}
+          <a href="/blog/{{ item.slug }}"><p>{{item.title}}</p></a>
+      {% endfor %}
+    </aside>
+  </div>
   </article>
 </div>
 {% endblock content %}

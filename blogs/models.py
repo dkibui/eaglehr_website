@@ -16,6 +16,11 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
 
+class ActiveBlogManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(active=1)
+
+
 class Blogs(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
@@ -27,6 +32,9 @@ class Blogs(models.Model):
                                on_delete=models.CASCADE)
     active = models.BooleanField(
         default=False, help_text='Select to publish this blog article. De-select to hide this blog article from displayed articles.')
+
+    objects = models.Manager()
+    active_blog = ActiveBlogManager()
 
     class Meta:
         ordering = ['-date_created', 'author']

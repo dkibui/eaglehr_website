@@ -174,10 +174,16 @@ h3 {
   display: inline-block;
 }
 
-.events .body-text p {
+.events .body-text p,
+.service-span {
   font-size: 12px;
   font-weight: 400;
   opacity: 0.975;
+}
+
+.service-span span {
+  margin-bottom: 6px;
+  display: block;
 }
 
 .events .body-text p::after {
@@ -935,6 +941,10 @@ select {
   list-style: revert;
 }
 
+.aside a {
+  font-size: 14.2px;
+}
+
 @media (min-width: 520px) {
   .home-cards,
   .events {
@@ -1165,5 +1175,9 @@ select {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+  }
+
+  .service-span span {
+  display: inline-block;
   }
 }
