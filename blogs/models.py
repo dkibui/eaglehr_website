@@ -12,8 +12,8 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        ordering = ['name']
-        verbose_name_plural = 'Categories'
+        ordering = ["name"]
+        verbose_name_plural = "Categories"
 
 
 class ActiveBlogManager(models.Manager):
@@ -28,17 +28,18 @@ class Blogs(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     date_created = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, default=0,
-                               on_delete=models.CASCADE)
+    author = models.ForeignKey(User, default=0, on_delete=models.CASCADE)
     active = models.BooleanField(
-        default=False, help_text='Select to publish this blog article. De-select to hide this blog article from displayed articles.')
+        default=False,
+        help_text="Select to publish this blog article. De-select to hide this blog article from displayed articles.",
+    )
 
     objects = models.Manager()
     active_blog = ActiveBlogManager()
 
     class Meta:
-        ordering = ['-date_created', 'author']
-        verbose_name_plural = 'Blogs'
+        ordering = ["-date_created", "author"]
+        verbose_name_plural = "Blogs"
 
     def __str__(self):
         return self.title

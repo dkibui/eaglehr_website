@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+
 # from taggit.managers import TaggableManager
 
 from ckeditor.fields import RichTextField
@@ -17,7 +18,7 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = "Categories"
 
 
 class JobType(models.Model):
@@ -27,7 +28,7 @@ class JobType(models.Model):
         return self.type_of_job
 
     class Meta:
-        verbose_name_plural = 'Job types'
+        verbose_name_plural = "Job types"
 
 
 class Location(models.Model):
@@ -48,13 +49,14 @@ class Post(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     apply_by_date = models.DateTimeField(default=timezone.now)
     updated_on = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, default=0,
-                               on_delete=models.CASCADE)
+    author = models.ForeignKey(User, default=0, on_delete=models.CASCADE)
     active = models.BooleanField(
-        default=False, help_text='Select to publish this job on the job portal page. De-select to hide this job.')
+        default=False,
+        help_text="Select to publish this job on the job portal page. De-select to hide this job.",
+    )
 
     class Meta:
-        ordering = ['-date_created', 'author']
+        ordering = ["-date_created", "author"]
 
     def __str__(self):
         return self.title
@@ -65,14 +67,14 @@ class Application(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=55)
-    phone = models.CharField(max_length=13, )
-    cover_letter = models.FileField(
-        upload_to='uploads/applications/')
-    resume = models.FileField(upload_to=f'uploads/applications/{post}')
+    phone = models.CharField(
+        max_length=13,
+    )
+    cover_letter = models.FileField(upload_to="uploads/applications/")
+    resume = models.FileField(upload_to=f"uploads/applications/{post}")
     reference = models.CharField(
-        max_length=255,
-        choices=WAYS_TO_FIND_US,
-        default=default_option)
+        max_length=255, choices=WAYS_TO_FIND_US, default=default_option
+    )
     date_applied = models.DateTimeField(default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
 

@@ -7,52 +7,89 @@ class RegisterForm(UserCreationForm):
     first_name = forms.CharField(
         max_length=75,
         required=True,
-        help_text='Enter your first name',
+        help_text="Enter your first name",
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter your first name', 'id': 'first_name'})
+            attrs={
+                "class": "form-control",
+                "placeholder": "Enter your first name",
+                "id": "first_name",
+            }
+        ),
     )
 
     last_name = forms.CharField(
         max_length=75,
         required=True,
-        help_text='Enter your last name',
+        help_text="Enter your last name",
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter your last name', 'id': 'last_name'})
+            attrs={
+                "class": "form-control",
+                "placeholder": "Enter your last name",
+                "id": "last_name",
+            }
+        ),
     )
 
     username = forms.CharField(
         max_length=75,
         required=True,
-        help_text='Enter your username',
+        help_text="Enter your username",
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter your username',  'id': 'username'})
+            attrs={
+                "class": "form-control",
+                "placeholder": "Enter your username",
+                "id": "username",
+            }
+        ),
     )
 
     email = forms.EmailField(
         max_length=75,
         required=True,
-        help_text='Enter your email address',
+        help_text="Enter your email address",
         widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter your email', 'id': 'email', 'autocomplete': 'on', })
+            attrs={
+                "class": "form-control",
+                "placeholder": "Enter your email",
+                "id": "email",
+                "autocomplete": "on",
+            }
+        ),
     )
 
     password1 = forms.CharField(
         max_length=75,
         required=True,
-        help_text='Enter password',
+        help_text="Enter password",
         widget=forms.PasswordInput(
-            attrs={'class': 'form-control', 'placeholder': 'Enter your password', 'id': 'password1'})
+            attrs={
+                "class": "form-control",
+                "placeholder": "Enter your password",
+                "id": "password1",
+            }
+        ),
     )
 
     password2 = forms.CharField(
         max_length=75,
         required=True,
-        help_text='Repeat your password',
+        help_text="Repeat your password",
         widget=forms.PasswordInput(
-            attrs={'class': 'form-control', 'placeholder': 'Confirm your password', 'id': 'password2'})
+            attrs={
+                "class": "form-control",
+                "placeholder": "Confirm your password",
+                "id": "password2",
+            }
+        ),
     )
 
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name',
-                  'username', 'password1', 'password2']
+        fields = [
+            "email",
+            "first_name",
+            "last_name",
+            "username",
+            "password1",
+            "password2",
+        ]

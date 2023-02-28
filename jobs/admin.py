@@ -2,12 +2,12 @@ from django.contrib import admin
 from . import models
 
 
-@admin.action(description='Activate selected jobs')
+@admin.action(description="Activate selected jobs")
 def activate_job(modeladmin, request, queryset):
     queryset.update(active=1)
 
 
-@admin.action(description='Deactivate selected jobs')
+@admin.action(description="Deactivate selected jobs")
 def deactivate_job(modeladmin, request, queryset):
     queryset.update(active=0)
 
@@ -17,27 +17,36 @@ class PostAdmin(admin.ModelAdmin):
         return obj.date_created.date()
 
     actions = [activate_job, deactivate_job]
-    list_display = ('title', 'date_posted', 'active')
-    search_fields = ['title', 'content']
+    list_display = ("title", "date_posted", "active")
+    search_fields = ["title", "content"]
     list_filter = ("active", "author")
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {"slug": ("title",)}
 
 
 class ApplicationAdmin(admin.ModelAdmin):
     def fullname(self):
-        return f'{self.first_name} {self.last_name}'
-    list_display = (fullname, 'cover_letter', 'resume')
+        return f"{self.first_name} {self.last_name}"
 
-    readonly_fields = ['first_name', 'last_name', 'cover_letter', 'resume',
-                       'email', 'phone', 'reference', 'date_applied', ]
+    list_display = (fullname, "cover_letter", "resume")
+
+    readonly_fields = [
+        "first_name",
+        "last_name",
+        "cover_letter",
+        "resume",
+        "email",
+        "phone",
+        "reference",
+        "date_applied",
+    ]
 
 
 class JobTypeAdmin(admin.ModelAdmin):
-    list_display = ('type_of_job',)
+    list_display = ("type_of_job",)
 
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ('location',)
+    list_display = ("location",)
 
 
 # Register your models here.

@@ -13,14 +13,15 @@ class News(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     date_created = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, default=0,
-                               on_delete=models.CASCADE)
+    author = models.ForeignKey(User, default=0, on_delete=models.CASCADE)
     active = models.BooleanField(
-        default=False, help_text='Select to publish this news article. De-select to hide this news article from available news articles.')
+        default=False,
+        help_text="Select to publish this news article. De-select to hide this news article from available news articles.",
+    )
 
     class Meta:
-        ordering = ['-date_created', 'author']
-        verbose_name_plural = 'News'
+        ordering = ["-date_created", "author"]
+        verbose_name_plural = "News"
 
     def __str__(self):
         return self.title

@@ -8,30 +8,62 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='BannerMessage',
+            name="BannerMessage",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('message', ckeditor.fields.RichTextField()),
-                ('is_active', models.BooleanField(default=False, help_text='Activate to display this message at the top of the home page')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("message", ckeditor.fields.RichTextField()),
+                (
+                    "is_active",
+                    models.BooleanField(
+                        default=False,
+                        help_text="Activate to display this message at the top of the home page",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Event',
+            name="Event",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('description', ckeditor.fields.RichTextField()),
-                ('start_date', models.DateField()),
-                ('duration', models.IntegerField(default=1, help_text='Duration of course in days')),
-                ('cost', models.FloatField(blank=True, default=10000, null=True)),
-                ('location', models.CharField(max_length=255)),
-                ('is_active', models.BooleanField(default=False, help_text='Activate to display this event on homepage on the upcoming events section. Only 3 nearest are displayed.')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("description", ckeditor.fields.RichTextField()),
+                ("start_date", models.DateField()),
+                (
+                    "duration",
+                    models.IntegerField(
+                        default=1, help_text="Duration of course in days"
+                    ),
+                ),
+                ("cost", models.FloatField(blank=True, default=10000, null=True)),
+                ("location", models.CharField(max_length=255)),
+                (
+                    "is_active",
+                    models.BooleanField(
+                        default=False,
+                        help_text="Activate to display this event on homepage on the upcoming events section. Only 3 nearest are displayed.",
+                    ),
+                ),
             ],
         ),
     ]

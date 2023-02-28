@@ -21,23 +21,22 @@ from django.urls import path, include
 
 # ...........................................................
 # default: "Django Administration"
-admin.site.site_header = 'EAGLEHR CONSULTANTS'
+admin.site.site_header = "EAGLEHR CONSULTANTS"
 # default: "Site administration"
-admin.site.index_title = 'WELCOME TO EAGLEHR'
+admin.site.index_title = "WELCOME TO EAGLEHR"
 # default: "Django site admin"
-admin.site.site_title = 'Eaglehr'
+admin.site.site_title = "Eaglehr"
 # ...........................................................
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('webapp.urls'), name='home_page'),
-    path('jobs/', include('jobs.urls')),
-    path('user/', include('User.urls')),
-    path('blog/', include('blogs.urls')),
-    path('news/', include('news.urls')),
+    path("admin/", admin.site.urls),
+    path("", include("webapp.urls"), name="home_page"),
+    path("jobs/", include("jobs.urls")),
+    path("user/", include("User.urls")),
+    path("blog/", include("blogs.urls")),
+    path("news/", include("news.urls")),
 ]  # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -2,19 +2,21 @@ from django.contrib import admin
 from . import models
 
 
-@admin.action(description='Activate selected blogs')
+@admin.action(description="Activate selected blogs")
 def activate_blogs(modeladmin, request, queryset):
     queryset.update(active=1)
 
 
-@admin.action(description='Deactivate selected blogs')
+@admin.action(description="Deactivate selected blogs")
 def deactivate_blogs(modeladmin, request, queryset):
     queryset.update(active=0)
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-    search_fields = ['name', ]
+    list_display = ("name",)
+    search_fields = [
+        "name",
+    ]
 
 
 class BlogsAdmin(admin.ModelAdmin):
@@ -22,10 +24,10 @@ class BlogsAdmin(admin.ModelAdmin):
         return obj.date_created.date()
 
     actions = [activate_blogs, deactivate_blogs]
-    list_display = ('title', 'date_posted', 'active')
-    search_fields = ['title', 'content']
+    list_display = ("title", "date_posted", "active")
+    search_fields = ["title", "content"]
     list_filter = ("active",)
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {"slug": ("title",)}
 
 
 # Register your models here.

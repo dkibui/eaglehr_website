@@ -6,13 +6,14 @@ from .models import News
 
 def index(request):
     context = {
-        "title": f"Sharing sought after python and django tips and tricks for web development. Here to help you upskill your web development"}
+        "title": f"Sharing sought after python and django tips and tricks for web development. Here to help you upskill your web development"
+    }
     posts = News.objects.all().filter(active=1)
 
     context["count"] = len(list(posts))
     context["object_list"] = posts
 
-    return render(request, 'news/index.html', context)
+    return render(request, "news/index.html", context)
 
 
 def news_detail(request, slug):
@@ -21,14 +22,12 @@ def news_detail(request, slug):
         news = News.objects.all().filter(active=1)
         others = news.exclude(slug=slug)
         news = news.get(slug=slug)
-        context['object'] = news
-        context['others'] = others
+        context["object"] = news
+        context["others"] = others
     except:
-        messages.error(
-            request, f'Your requested news post is not available')
-        return redirect('news:index')
+        messages.error(request, f"Your requested news post is not available")
+        return redirect("news:index")
     if news.active != 1:
-        messages.error(
-            request, f'news is currently not available')
-        return redirect('blogs:index')
-    return render(request, 'news/news-detail.html', context)
+        messages.error(request, f"news is currently not available")
+        return redirect("blogs:index")
+    return render(request, "news/news-detail.html", context)
