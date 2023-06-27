@@ -1,0 +1,21 @@
+{% extends "sitewide/base.html" %}
+
+{% block content %}
+<div class="account w-11/12 mx-auto max-w-[720px] mt-8">
+    <form action="{% url 'account_logout' %}" method="post">
+        <fieldset class="border px-8 pt-6 pb-10 rounded">
+        <legend class="text-lg px-3">Sign Out</legend>
+        <p>Are you sure you want to log out?</p>
+        {% csrf_token %}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <div>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-8 rounded mt-3">
+                Sign Out
+            </button>
+        </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

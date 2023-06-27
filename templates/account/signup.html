@@ -1,0 +1,68 @@
+{% extends "sitewide/base.html" %}
+
+{% block content %}
+<div class="account w-11/12 mx-auto max-w-[720px] mt-8">
+    <form action="" method="post">
+        <fieldset class="border px-8 pt-6 pb-10 rounded">
+        <legend class="text-lg px-3">User Signup</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if form.errors %}
+            <div>
+                {% for error in form.errors %}
+                    <small class="block text-sm text-red-600 pb-2 pl-3">{{ error|escape }}</small>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-8 rounded">Sign Up</button>
+        </div>
+        </fieldset>
+    </form>
+    <div class="mt-4">
+        <small>
+            Already have an account? <a href="{% url 'account_login' %}" class="text-blue-500">Login</a>
+        </small>
+    </div>
+</div>
+{% endblock %} 
+
+{% comment %} <div>
+            <label for="id_email">Email</label>
+            <div>
+                <input type="email" name="email" placeholder="Email address" autocomplete="email" id="id_email" class="border border-gray-300 rounded p-2 mt-1 mb-3">
+                {% if form.email.errors %}
+                    <div>
+                        {% for error in form.email.errors %}
+                            <small class="block text-sm text-red-600 pb-2 pl-3">{{ error|escape }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            <label for="id_password1">Password</label>
+            <div>
+                <input type="password" name="password1" placeholder="Password" autocomplete="new-password" required id="id_password1" class="border border-gray-300 rounded p-2 mt-1 mb-3">
+                {% if form.password1.errors %}
+                    <div>
+                        {% for error in form.password1.errors %}
+                            <small class="block text-sm text-red-600 pb-2 pl-3">{{ error|escape }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div>
+            <label for="id_password2">Confirm Password</label>
+            <div>
+                <input type="password" name="password2" placeholder="Confirm Password" autocomplete="new-password" required id="id_password2" class="border border-gray-300 rounded p-2 mt-1 mb-3">
+                {% if form.password2.errors %}
+                    <div>
+                        {% for error in form.password2.errors %}
+                            <small class="block text-sm text-red-600 pb-2 pl-3">{{ error|escape }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div> {% endcomment %}

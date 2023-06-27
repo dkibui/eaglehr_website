@@ -3,8 +3,19 @@
   "terminal.integrated.profiles.windows": {
     "PowerShell -nologo": {
       "source": "PowerShell",
-      "args": ["-nologo"]
+      "args": [
+        "-nologo"
+      ]
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Windows PowerShell"
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none",
+  "python.testing.pytestArgs": [
+    "blogs"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
 }

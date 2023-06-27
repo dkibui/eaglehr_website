@@ -15,7 +15,7 @@ def index(request):
     try:
         banner_message = BannerMessage.objects.all().filter(is_active=1)[:1][0]
         context["banner_message"] = banner_message
-    except:
+    except Exception as e:
         banner_message = "Unable to fetch message"
 
     events = (

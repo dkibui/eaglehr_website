@@ -30,13 +30,15 @@ admin.site.site_title = "Eaglehr"
 
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     path("", include("webapp.urls"), name="home_page"),
+    path("admin/", admin.site.urls),
+    path("accounts/", include("allauth.urls")),
     path("jobs/", include("jobs.urls")),
     path("user/", include("User.urls")),
     path("blog/", include("blogs.urls")),
-    path("news/", include("news.urls")),
-]  # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    # path("news/", include("news.urls")),
+    path("__reload__/", include("django_browser_reload.urls")),
+]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

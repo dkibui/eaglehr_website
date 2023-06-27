@@ -15,20 +15,32 @@
   --margin-top: 4rem;
 }
 
+.account label {
+  display: block;
+  width: 100%;
+}
+
+.account input {
+  width: 100%;
+  border: 1px solid #eaebec;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  background-color: rgb(235, 239, 243);
+}
+
+.account input[type="checkbox"] {
+  width: 16px;
+}
+
+.errorlist li {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  margin: revert;
 }
 
 html,
@@ -38,11 +50,9 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 252, 252, 0.026) 0%,
-    rgba(255, 255, 255, 0.021) 51%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 252, 252, 0.026) 0%,
+      rgba(255, 255, 255, 0.021) 51%);
   color: #000;
   font-size: 15px;
 }
@@ -455,18 +465,6 @@ h3 {
   row-gap: 2.2rem;
 }
 
-/* .main {
-  outline: 1px solid var(--muted-primary);
-  border-radius: 5px;
-  padding: 1rem;
-} */
-
-/* .aside {
-  outline: 1px solid var(--muted-primary);
-  border-radius: 5px;
-  padding: 1rem;
-} */
-
 .event-wrapper {
   border-top: 1px solid #003c4a1e;
 }
@@ -713,102 +711,6 @@ h3 {
   line-height: 2.8;
 }
 
-.login-form,
-.application-form {
-  margin: 4.5rem auto 2.5rem auto;
-}
-
-.input-label-wrapper {
-  margin: 36px 0;
-}
-
-.form-group label {
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.form-group span {
-  color: var(--danger);
-  font-weight: 700;
-}
-
-.input-label-wrapper input,
-.input-label-wrapper textarea,
-.input-label-wrapper select {
-  border: none;
-  width: 100%;
-  padding: 12px 14px;
-  background-color: var(--white);
-  border: 1px solid var(--muted-primary);
-  border-radius: 3px;
-}
-
-.input-label-wrapper select {
-  width: 60%;
-  max-width: 320px;
-  font: inherit;
-  letter-spacing: inherit;
-  word-spacing: inherit;
-  padding: 8px 14px;
-  border: 1px solid var(--muted-primary);
-}
-
-.contacts .input-label-wrapper {
-  margin-top: 2.5rem;
-}
-
-.input-label-wrapper legend {
-  padding: 0 0.245rem;
-}
-
-/* .......................................... */
-
-select {
-  background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>")
-    no-repeat;
-  background-position: calc(100% - 0.75rem) center !important;
-  -moz-appearance: none !important;
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  padding-right: 14px !important;
-  color: var(--links);
-  margin-bottom: 5px;
-}
-
-/* .......................................... */
-
-.input-label-wrapper input[type="file"] {
-  border: none;
-  padding: 1px 0 1px 0;
-  border-radius: 0;
-}
-
-.input-label-wrapper input[type="file"]:focus {
-  border: none;
-  outline: none;
-}
-
-.input-label-wrapper input:focus,
-.input-label-wrapper select:focus {
-  border-bottom: 1px solid var(--secondary);
-  outline: none;
-  background-color: var(--white);
-}
-
-.button {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 15px 20px;
-  border-radius: 5px;
-  width: -moz-fit-content;
-  width: fit-content;
-  min-width: 120px;
-  border: none;
-  outline: none;
-  margin-top: 0.7525rem;
-  margin-bottom: 2.2rem;
-}
-
 .footer-inner {
   background: var(--primary);
   padding: 3.5rem 0 2.5rem 0;
@@ -946,6 +848,7 @@ select {
 }
 
 @media (min-width: 520px) {
+
   .home-cards,
   .events {
     grid-template-columns: repeat(2, 1fr);
@@ -963,6 +866,7 @@ select {
 }
 
 @media (min-width: 848px) {
+
   h1,
   h2,
   h3 {
@@ -1076,7 +980,7 @@ select {
 
   .input-label-wrapper {
     margin: 54px 0;
-}
+  }
 
   .header {
     align-items: left;
@@ -1138,10 +1042,10 @@ select {
     margin-bottom: 70px;
   }
 
-  
-.map-container {
-  margin-top: 7.2rem;
-}
+
+  .map-container {
+    margin-top: 7.2rem;
+  }
 
   .event {
     border-top: none;
@@ -1178,6 +1082,6 @@ select {
   }
 
   .service-span span {
-  display: inline-block;
+    display: inline-block;
   }
 }

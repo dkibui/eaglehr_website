@@ -24,7 +24,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost", env("ALLOWED_HOST")]
 
 INSTALLED_APPS = [
     "blogs.apps.BlogsConfig",
-    "news.apps.NewsConfig",
+    # "news.apps.NewsConfig",
     "jobs.apps.JobsConfig",
     "User.apps.UserConfig",
     "webapp.apps.WebappConfig",
@@ -34,8 +34,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     # pip installed apps
     "ckeditor",
+    "tailwind",
+    "theme",
+    "django_browser_reload",
+    # All auth
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
 ]
 
 MIDDLEWARE = [
@@ -46,6 +55,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # Local middleware
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 # MESSAGE_TAGS
@@ -72,6 +83,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # `allauth` needs this from django
+                "django.template.context_processors.request",
             ],
         },
     },
@@ -117,20 +130,52 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-
 STATIC_URL = "static/"
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    BASE_DIR / "theme/static",
+]
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
-# CKEDITOR_BASEPATH = os.path.join(STATIC_URL, '/ckeditor/ckeditor/')
+
+TAILWIND_APP_NAME = "theme"
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+FORMS_LABEL_SUFFIX = ""
+ACCOUNT_FORMS_LABEL_SUFFIX = ""
 
 
-# Default primary key field type
+SITE_ID = 1
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        "APP": {"client_id": "123", "secret": "456", "key": ""}
+    }
+}
+
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+LOGIN_REDIRECT_URL = "webapp:index"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

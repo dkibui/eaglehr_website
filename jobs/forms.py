@@ -1,5 +1,3 @@
-import phonenumbers
-from phonenumbers import timezone
 from django import forms
 from .models import Post, Application
 from .reference_choices import WAYS_TO_FIND_US

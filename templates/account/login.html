@@ -1,0 +1,23 @@
+{% extends "sitewide/base.html" %}
+
+{% block content %}
+<div class="account w-11/12 mx-auto max-w-[720px] mt-8">
+    <form action="" method="post">
+        <fieldset class="border px-8 pt-6 pb-10 rounded">
+        <legend class="text-lg px-3">Login</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-8 rounded mt-3">
+                Login
+            </button>
+        </div>
+        </fieldset>
+    </form>
+    <div class="mt-4">
+        <small>
+            Don't have an account? <a href="{% url 'account_signup' %}" class="text-blue-500">Sign Up</a>
+        </small>
+    </div>
+</div>
+{% endblock %}
