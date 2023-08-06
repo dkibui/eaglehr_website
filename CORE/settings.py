@@ -17,7 +17,9 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 SECRET_KEY = env("SECRET_KEY")
 
+
 DEBUG = env("DEBUG")
+
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", env("ALLOWED_HOST")]
 
@@ -39,7 +41,7 @@ INSTALLED_APPS = [
     "ckeditor",
     "tailwind",
     "theme",
-    "django_browser_reload",
+    # "django_browser_reload",
     # All auth
     "allauth",
     "allauth.account",
@@ -56,7 +58,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Local middleware
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    # "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 # MESSAGE_TAGS

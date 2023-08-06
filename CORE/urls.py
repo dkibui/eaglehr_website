@@ -37,7 +37,7 @@ urlpatterns = [
     path("user/", include("User.urls")),
     path("blog/", include("blogs.urls")),
     # path("news/", include("news.urls")),
-    path("__reload__/", include("django_browser_reload.urls")),
+    # path("__reload__/", include("django_browser_reload.urls")),
 ]
 
 if settings.DEBUG:

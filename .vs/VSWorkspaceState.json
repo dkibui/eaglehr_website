@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CORE",
+    "\\static",
+    "\\static\\css",
+    "\\templates",
+    "\\templates\\jobs"
   ],
+  "SelectedNode": "\\static\\css\\styles.css",
   "PreviewInSolutionExplorer": false
 }

@@ -38,11 +38,9 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 252, 252, 0.026) 0%,
-    rgba(255, 255, 255, 0.021) 51%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 252, 252, 0.026) 0%,
+      rgba(255, 255, 255, 0.021) 51%);
   color: #000;
   font-size: 15px;
 }
@@ -616,7 +614,7 @@ h3 {
   margin-bottom: 0;
 }
 
-/* .......................................................... */
+/* .............................................. */
 .all-jobs {
   margin-top: var(--margin-top) !important;
   margin-bottom: var(--margin-top) !important;
@@ -626,10 +624,6 @@ h3 {
   border-bottom: 2px solid var(--muted-primary2);
   padding-bottom: 20px;
   margin-bottom: 16px;
-}
-
-.job-list:last-child {
-  border-bottom: none;
 }
 
 .job-list span {
@@ -649,12 +643,6 @@ h3 {
 
 .job-list a {
   border: none;
-}
-
-.job-list h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 18px;
 }
 
 /* .......................................................... */
@@ -764,8 +752,7 @@ h3 {
 /* .......................................... */
 
 select {
-  background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>")
-    no-repeat;
+  background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
   background-position: calc(100% - 0.75rem) center !important;
   -moz-appearance: none !important;
   -webkit-appearance: none !important;
@@ -946,6 +933,7 @@ select {
 }
 
 @media (min-width: 520px) {
+
   .home-cards,
   .events {
     grid-template-columns: repeat(2, 1fr);
@@ -963,6 +951,7 @@ select {
 }
 
 @media (min-width: 848px) {
+
   h1,
   h2,
   h3 {
@@ -1076,7 +1065,7 @@ select {
 
   .input-label-wrapper {
     margin: 54px 0;
-}
+  }
 
   .header {
     align-items: left;
@@ -1138,10 +1127,10 @@ select {
     margin-bottom: 70px;
   }
 
-  
-.map-container {
-  margin-top: 7.2rem;
-}
+
+  .map-container {
+    margin-top: 7.2rem;
+  }
 
   .event {
     border-top: none;
@@ -1178,6 +1167,6 @@ select {
   }
 
   .service-span span {
-  display: inline-block;
+    display: inline-block;
   }
 }
