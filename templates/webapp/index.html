@@ -1,7 +1,7 @@
 {% extends "sitewide/base.html" %}
 {% load static %} {% block content %}
 
-<header class="header width">
+<header class="header w-11/12 mx-auto max-w-[1440px]">
   <div class="width">
     <h1 class="font-bold text-2xl">Expert HR Advisory Solutions To Develop Sustainable Growth.</h1>
     <p>See how we can help your business leap to the next level of growth.</p>
@@ -15,44 +15,20 @@
   <h2 class="font-bold text-xl text-red-500">What is Our Service Offering</h2>
 </div>
 
-<section class="width home-cards">
-  <div>
-    <img class="service-image" src={% static 'images/png/sourcing.png' %} alt="">
-    <h3 class="font-bold ">Top Talent Sourcing</h3>
-    <p>
-      Strategic sourcing skills play an important role in the cost structure and
-      competitiveness of small and large businesses.
-    </p>
-    <a href="services/">Learn More <i class="fas fa-chevron-right"></i></a>
+<div class="header1">
+  <div class="mt-auto bg-gradient-to-t from-green-900 to-transparent">
+    <section class="w-11/12 mx-auto max-w-[1440px]">
+      <img class="service-image" src={% static 'images/png/sourcing.png' %} alt="">
+      <h3 class="font-bold ">Top Talent Sourcing</h3>
+      <p>
+        Strategic sourcing skills play an important role in the cost structure and
+        competitiveness of small and large businesses.
+      </p>
+      <a href="services/">Learn More <i class="fas fa-chevron-right"></i></a>
+    </section>
   </div>
-  <div>
-    <img class="service-image" src={% static 'images/png/acquisition.png' %} alt="" />
-    <h3 class="font-bold">Acquisition & Retention</h3>
-    <p>
-      Businesses strive to attract the best talent so that they can be trained
-      and moulded into future leaders of the company.
-    </p>
-    <a href="services/">Learn More <i class="fas fa-chevron-right"></i></a>
-  </div>
-  <div>
-    <img class="service-image" src={% static 'images/png/interview.png' %} alt="" />
-    <h3 class="font-bold">Interviews On Your Behalf</h3>
-    <p>
-      You should contact the applicants to be interviewed by telephone, by
-      sending a letter in the mail, or email to schedule interviews.
-    </p>
-    <a href="services/">Learn More <i class="fas fa-chevron-right"></i></a>
-  </div>
-  <div>
-    <img class="service-image" src={% static 'images/png/talent-care.png' %} alt="" />
-    <h3 class="font-bold">We take Care of Your Talent</h3>
-    <p>
-      To find out what one is fitted to do, and to secure an opportunity to do
-      it, is the key to happiness. Happy employees happy clients.
-    </p>
-    <a href="services/">Learn More <i class="fas fa-chevron-right"></i></a>
-  </div>
-</section>
+</div>
+
 
 <section class="width breakout">
   <div class="content">

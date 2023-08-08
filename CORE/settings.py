@@ -1,6 +1,7 @@
 from django.contrib.messages import constants as messages
 from pathlib import Path
 import os
+import platform
 import environ
 
 
@@ -26,7 +27,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost", env("ALLOWED_HOST")]
 
 INSTALLED_APPS = [
     "blogs.apps.BlogsConfig",
-    # "news.apps.NewsConfig",
+    "news.apps.NewsConfig",
     "jobs.apps.JobsConfig",
     "User.apps.UserConfig",
     "webapp.apps.WebappConfig",
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     "ckeditor",
     "tailwind",
     "theme",
-    # "django_browser_reload",
+    "django_browser_reload",
     # All auth
     "allauth",
     "allauth.account",
@@ -58,7 +59,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Local middleware
-    # "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 # MESSAGE_TAGS
@@ -134,7 +135,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    BASE_DIR / "static",
     BASE_DIR / "theme/static",
 ]
 
@@ -149,7 +150,11 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+if platform.system() == "Windows":
+    NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+else:
+    NPM_BIN_PATH = '/usr/bin/npm'
+
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
