@@ -370,14 +370,14 @@ h3 {
 }
 
 .header1 {
-    min-height: 650px;
+    /* min-height: 650px; */
     background: url("/static/images/ey.jpg") no-repeat center left/cover;
     background-position-x: 28%;
     background-color: var(--primary);
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: left;
-    text-align: left;
+    text-align: left; */
 }
 
 
