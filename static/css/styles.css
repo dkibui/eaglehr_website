@@ -54,10 +54,10 @@ body {
     font-size: 15px;
 }
 
-.body-text img {
+/* .body-text img {
     display: block;
     max-width: 100%;
-}
+} */
 
 .big-margin-top {
     margin-top: var(--margin-top) !important;
